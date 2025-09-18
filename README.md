@@ -1,6 +1,6 @@
-# Hi, I'm RIxiV1 👋
+# Hi, I'm Suhaib 👋
 
-**Student & Developer** passionate about building impactful software!  
+**Student & Developer**
 Currently exploring the worlds of **Python, C**, and **Web Development**.
 
 ---
@@ -9,8 +9,6 @@ Currently exploring the worlds of **Python, C**, and **Web Development**.
 - 👨‍💻 Skilled in: **Python**, **C**, **HTML/CSS/JS** (Web Dev).
 - 🤝 Open to collaborating on innovative projects, especially those making a difference.
 - 📈 Actively seeking opportunities for internships, mentorships, and open-source contributions.
-- _“Hesitation is defeat.”_
-
 ---
 
 ## 🌟 Featured Projects
