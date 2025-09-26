@@ -17,6 +17,6 @@
 </p>
 
 <p align="center">
-  <em>Always up for a challenge, collaboration, or tech chat.<br>
+  <em>Tech Stack.<br>
   Let's connect and create something awesome!</em>
 </p>
