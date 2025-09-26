@@ -20,7 +20,7 @@ Currently exploring the worlds of **Python, C**, and **Web Development**.
 
 ## 📫 Connect with Me
 
-- [LinkedIn](https://www.linkedin.com/in/shaik-suhaib-856512324)
+- [LinkedIn](https://www.linkedin.com/in/shaiksuhaib)
 
 ---
 
