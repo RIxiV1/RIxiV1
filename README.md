@@ -1,21 +1,9 @@
 # Hi, I'm Suhaib 👋
-
-**Student & Developer**
-Currently exploring the worlds of **Python, C**, and **Web Development**.
-
 ---
 
 ## 🚀 About Me
-- 👨‍💻 Skilled in: **Python**, **C**, **HTML/CSS/JS** (Web Dev).
+- 👨‍💻 I Like to Build and Break stuff
 - 🤝 Open to collaborating on innovative projects, especially those making a difference.
-- 📈 Actively seeking opportunities for internships, mentorships, and open-source contributions.
----
-
-## 🌟 Featured Projects
-
-- **[InfoPop](#)**  
-  A smart information aggregator for fast and easy data access.
-
 ---
 
 ## 📫 Connect with Me
