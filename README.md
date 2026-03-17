@@ -20,33 +20,6 @@
 
 </div>
 
-<br/>
-
----
-
-```javascript
-export default {
-  name:     "Shaik Suhaib",
-  role:     "AI Engineer · Full-Stack Developer",
-  base:     "India 🇮🇳",
-
-  building: [
-    "Agentic AI & LLM-powered pipelines",
-    "Open source web projects",
-  ],
-
-  seeking: [
-    "Collaborators on AI/Agentic projects",
-    "Help scaling AI apps to production",
-    "Cybersecurity research partners",
-  ],
-};
-```
-
-<br/>
-
----
-
 <h2 align="center">⚙️ Tech Stack</h2>
 
 <div align="center">
@@ -115,7 +88,7 @@ export default {
 
 </div>
 <br/>
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:050510,50:0f0a2e,100:050510&height=100&section=footer&animation=twinkling" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:050510,50:0f0a2e,100:050510&height=110&section=footer&animation=twinkling" width="100%" />
 <div align="center">
 <sub>built with obsession</sub>
 </div>
