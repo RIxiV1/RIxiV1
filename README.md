@@ -69,7 +69,6 @@
 
 <div align="center">
 
-<img height="180" src="https://github-readme-stats.vercel.app/api?username=RIxiV1&show_icons=true&hide_border=true&theme=tokyonight&bg_color=0d0d16&title_color=9d7fe3&text_color=6e6e8a&icon_color=7c3aed&include_all_commits=true&count_private=true&border_radius=10" />
 <img height="180" src="https://github-readme-stats.vercel.app/api/top-langs/?username=RIxiV1&hide_border=true&theme=tokyonight&bg_color=0d0d16&title_color=9d7fe3&text_color=6e6e8a&layout=compact&border_radius=10" />
 
 <br/>
@@ -88,7 +87,7 @@
 
 </div>
 <br/>
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:050510,50:0f0a2e,100:050510&height=110&section=footer&animation=twinkling" width="100%" />
+
 <div align="center">
 <sub>built with obsession</sub>
 </div>
