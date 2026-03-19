@@ -1,0 +1,251 @@
+<svg width="100%" viewBox="0 0 900 1100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @keyframes pulseRed {
+        0% { opacity: 0.4; filter: drop-shadow(0 0 2px rgba(139,0,0,0.5)); }
+        50% { opacity: 0.9; filter: drop-shadow(0 0 8px rgba(139,0,0,0.9)); }
+        100% { opacity: 0.4; filter: drop-shadow(0 0 2px rgba(139,0,0,0.5)); }
+      }
+      @keyframes glitch {
+        0% { transform: translate(0); }
+        2% { transform: translate(-2px, 1px); }
+        4% { transform: translate(0); }
+        98% { transform: translate(0); }
+        100% { transform: translate(1px, -1px); }
+      }
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-4px); }
+        100% { transform: translateY(0px); }
+      }
+      .anim-pulse { animation: pulseRed 4s infinite ease-in-out; }
+      .anim-glitch { animation: glitch 3s infinite; }
+      .anim-float { animation: float 6s infinite ease-in-out; }
+      
+      /* Subtle hover effects (Works if SVG is interacted with directly) */
+      .tech-hover { transition: all 0.3s ease; }
+      .tech-hover:hover { fill: #ffffff; text-shadow: 0 0 5px rgba(255,255,255,0.5); }
+    </style>
+
+    <pattern id="dots" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="12" cy="12" r="0.6" fill="#ffffff" opacity="0.04"/>
+    </pattern>
+    <pattern id="grid" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M60 0 L0 0 0 60" fill="none" stroke="#ffffff" stroke-width="0.15" opacity="0.03"/>
+    </pattern>
+    
+    <clipPath id="torn1">
+      <path d="M0 0 L385 0 L385 10 L372 24 L384 40 L373 58 L385 74 L374 92 L386 108 L375 126 L387 144 L376 162 L388 178 L377 196 L389 214 L378 232 L390 250 L379 268 L391 285 L380 303 L392 320 L381 338 L393 356 L382 374 L394 392 L383 410 L395 428 L384 446 L390 460 L0 460 Z"/>
+    </clipPath>
+
+    <filter id="shadow">
+      <feDropShadow dx="2" dy="4" stdDeviation="5" flood-color="#000" flood-opacity="0.8"/>
+    </filter>
+    <filter id="glow-red">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="900" height="1100" fill="#06080f"/>
+  <rect width="900" height="1100" fill="url(#dots)"/>
+  <rect width="900" height="1100" fill="url(#grid)"/>
+  
+  <rect x="0" y="0" width="120" height="1100" fill="#8b0000" opacity="0.04"/>
+  <rect x="780" y="0" width="120" height="1100" fill="#8b0000" opacity="0.04"/>
+
+  <g filter="url(#shadow)">
+    <rect x="0" y="0" width="390" height="460" fill="#d4c9a8" clip-path="url(#torn1)"/>
+    <line x1="15" y1="0" x2="15" y2="460" stroke="#b8aa88" stroke-width="0.5" opacity="0.6"/>
+    <line x1="45" y1="0" x2="45" y2="460" stroke="#b8aa88" stroke-width="0.3" opacity="0.3"/>
+    <line x1="80" y1="0" x2="80" y2="460" stroke="#b8aa88" stroke-width="0.3" opacity="0.25"/>
+    <line x1="130" y1="0" x2="130" y2="460" stroke="#b8aa88" stroke-width="0.25" opacity="0.2"/>
+    <line x1="190" y1="0" x2="190" y2="460" stroke="#b8aa88" stroke-width="0.25" opacity="0.2"/>
+    <line x1="260" y1="0" x2="260" y2="460" stroke="#b8aa88" stroke-width="0.25" opacity="0.2"/>
+    <line x1="330" y1="0" x2="330" y2="460" stroke="#b8aa88" stroke-width="0.25" opacity="0.2"/>
+    <line x1="0" y1="80" x2="390" y2="80" stroke="#b8aa88" stroke-width="0.2" opacity="0.15"/>
+    <line x1="0" y1="180" x2="390" y2="180" stroke="#b8aa88" stroke-width="0.2" opacity="0.12"/>
+    <line x1="0" y1="290" x2="390" y2="290" stroke="#b8aa88" stroke-width="0.2" opacity="0.12"/>
+    <line x1="0" y1="380" x2="390" y2="380" stroke="#b8aa88" stroke-width="0.2" opacity="0.15"/>
+    
+    <g class="anim-float">
+      <line x1="60" y1="40" x2="340" y2="300" stroke="#2a1a0a" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="62" y1="38" x2="342" y2="298" stroke="#8a7a5a" stroke-width="0.6" stroke-linecap="round" opacity="0.6"/>
+      <line x1="65" y1="42" x2="330" y2="292" stroke="#1a1208" stroke-width="0.8" stroke-linecap="round" opacity="0.5"/>
+      <ellipse cx="340" cy="300" rx="14" ry="8" fill="#3a2a1a" transform="rotate(45 340 300)"/>
+      <ellipse cx="340" cy="300" rx="10" ry="5" fill="none" stroke="#6a5a3a" stroke-width="0.8" transform="rotate(45 340 300)"/>
+      <line x1="340" y1="300" x2="360" y2="320" stroke="#2a1a0a" stroke-width="5" stroke-linecap="round"/>
+      <line x1="343" y1="302" x2="362" y2="321" stroke="#5a3a1a" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+      <line x1="344" y1="307" x2="350" y2="301" stroke="#8a6a3a" stroke-width="0.8" opacity="0.7"/>
+      <line x1="348" y1="311" x2="354" y2="305" stroke="#8a6a3a" stroke-width="0.8" opacity="0.7"/>
+      <line x1="352" y1="315" x2="358" y2="309" stroke="#8a6a3a" stroke-width="0.8" opacity="0.7"/>
+      <path d="M180 170 Q182 185 180 195 Q178 185 180 170Z" fill="#8b0000" opacity="0.8" filter="url(#glow-red)"/>
+      <path d="M195 182 Q197 194 196 202 Q194 194 195 182Z" fill="#8b0000" opacity="0.6"/>
+      <circle cx="180" cy="197" r="2.5" fill="#8b0000" opacity="0.7"/>
+      <circle cx="196" cy="204" r="2" fill="#8b0000" opacity="0.5"/>
+    </g>
+
+    <circle cx="100" cy="370" r="38" fill="none" stroke="#2a1a0a" stroke-width="1.2" opacity="0.5"/>
+    <circle cx="100" cy="370" r="32" fill="none" stroke="#2a1a0a" stroke-width="0.5" opacity="0.3"/>
+    <path d="M100 345 C115 345 125 358 118 368 C111 378 96 375 93 365 C90 355 97 348 104 352 C111 356 112 365 105 369" fill="none" stroke="#2a1a0a" stroke-width="1" opacity="0.6"/>
+    <path d="M120 382 C110 395 96 395 91 385 C86 375 94 364 104 367 C114 370 116 382 108 385 C100 388 93 381 96 374" fill="none" stroke="#2a1a0a" stroke-width="1" opacity="0.6"/>
+    <path d="M80 355 C68 362 66 376 76 382 C86 388 98 381 96 371 C94 361 82 360 81 368 C80 376 88 381 94 377" fill="none" stroke="#2a1a0a" stroke-width="1" opacity="0.6"/>
+    
+    <text x="28" y="418" font-family="Georgia, 'Times New Roman', serif" font-size="12" fill="#2a1a0a" font-style="italic" opacity="0.9">hesitation is defeat</text>
+    <line x1="28" y1="422" x2="220" y2="422" stroke="#8b0000" stroke-width="0.8" opacity="0.8"/>
+    <text x="28" y="438" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#6a0000" font-style="italic" opacity="0.9">— with a sword</text>
+  </g>
+
+  <g class="anim-float">
+    <text x="396" y="198" font-family="Impact, 'Arial Black', sans-serif" font-size="82" fill="none" stroke="#000" stroke-width="4" letter-spacing="-2" opacity="0.8">SHAIK</text>
+    <text x="396" y="300" font-family="Impact, 'Arial Black', sans-serif" font-size="82" fill="none" stroke="#000" stroke-width="4" letter-spacing="-2" opacity="0.8">SUHAIB</text>
+    <text x="400" y="196" font-family="Impact, 'Arial Black', sans-serif" font-size="82" fill="#e8e0d0" letter-spacing="-2">SHAIK</text>
+    <text x="400" y="298" font-family="Impact, 'Arial Black', sans-serif" font-size="82" fill="#e8e0d0" letter-spacing="-2">SUHAIB</text>
+  </g>
+
+  <g>
+    <line x1="390" y1="110" x2="545" y2="315" stroke="#8b0000" stroke-width="4.5" stroke-linecap="round" filter="url(#glow-red)" class="anim-pulse"/>
+    <line x1="395" y1="108" x2="550" y2="313" stroke="#06080f" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="388" y1="108" x2="395" y2="116" stroke="#8b0000" stroke-width="1" opacity="0.8"/>
+    <line x1="393" y1="106" x2="400" y2="114" stroke="#8b0000" stroke-width="0.7" opacity="0.6"/>
+  </g>
+
+  <g class="anim-glitch">
+    <rect x="618" y="24" width="122" height="26" fill="#e8e0d0" rx="1"/>
+    <text x="679" y="41" font-family="'Courier New', monospace" font-size="10" fill="#06080f" text-anchor="middle" letter-spacing="2" font-weight="bold">NO SIGNAL</text>
+  </g>
+
+  <text x="862" y="80" font-family="serif" font-size="18" fill="#1a0a0a" opacity="0.4">侍</text>
+  <text x="862" y="110" font-family="serif" font-size="18" fill="#1a0a0a" opacity="0.3">無</text>
+  <text x="862" y="140" font-family="serif" font-size="18" fill="#1a0a0a" opacity="0.3">刀</text>
+  <text x="862" y="170" font-family="serif" font-size="18" fill="#8b0000" opacity="0.5" class="anim-pulse">剣</text>
+
+  <text x="400" y="340" font-family="'Courier New', monospace" font-size="11" fill="#8a6a4a" letter-spacing="2" font-weight="bold">AI ENGINEER // AGENTIC SYSTEMS</text>
+  <text x="400" y="360" font-family="'Courier New', monospace" font-size="11" fill="#8a6a4a" letter-spacing="2" font-weight="bold">OPEN SOURCE // LLM INFRA</text>
+  <text x="400" y="396" font-family="Georgia, serif" font-size="11" fill="#8b0000" font-style="italic" letter-spacing="1" class="anim-pulse">$ hesitation is defeat — building in public</text>
+
+  <g transform="translate(0, 5)">
+    <rect x="400" y="418" width="78" height="22" fill="#0d0a08" stroke="#3a2a1a" stroke-width="0.5" rx="1"/>
+    <text x="439" y="433" font-family="'Courier New', monospace" font-size="9" fill="#c8a86a" text-anchor="middle" letter-spacing="1">LINKEDIN</text>
+    
+    <rect x="486" y="418" width="52" height="22" fill="#0d0a08" stroke="#3a2a1a" stroke-width="0.5" rx="1"/>
+    <text x="512" y="433" font-family="'Courier New', monospace" font-size="9" fill="#c8a86a" text-anchor="middle" letter-spacing="1">X/TW</text>
+    
+    <rect x="546" y="418" width="68" height="22" fill="#0d0a08" stroke="#3a2a1a" stroke-width="0.5" rx="1"/>
+    <text x="580" y="433" font-family="'Courier New', monospace" font-size="9" fill="#c8a86a" text-anchor="middle" letter-spacing="1">MEDIUM</text>
+    
+    <rect x="622" y="418" width="56" height="22" fill="#0d0a08" stroke="#3a2a1a" stroke-width="0.5" rx="1"/>
+    <text x="650" y="433" font-family="'Courier New', monospace" font-size="9" fill="#c8a86a" text-anchor="middle" letter-spacing="1">EMAIL</text>
+    
+    <rect x="686" y="418" width="54" height="22" fill="#0d0a08" stroke="#3a2a1a" stroke-width="0.5" rx="1"/>
+    <text x="713" y="433" font-family="'Courier New', monospace" font-size="9" fill="#c8a86a" text-anchor="middle" letter-spacing="1">KO-FI</text>
+  </g>
+
+  <line x1="0" y1="475" x2="900" y2="475" stroke="#8b0000" stroke-width="1.5" opacity="0.6" class="anim-pulse"/>
+
+  <rect x="0" y="475" width="900" height="325" fill="#080a10"/>
+  <text x="40" y="515" font-family="Impact, 'Arial Black', sans-serif" font-size="12" fill="#8b0000" letter-spacing="5">ARSENAL</text>
+  <line x1="40" y1="525" x2="860" y2="525" stroke="#1a1208" stroke-width="1"/>
+
+  <g>
+    <rect x="40" y="540" width="250" height="120" fill="#0a0c10" stroke="#1a1208" stroke-width="1" rx="2" filter="url(#shadow)"/>
+    <rect x="40" y="540" width="3" height="120" fill="#8b0000" class="anim-pulse"/>
+    <text x="56" y="560" font-family="'Courier New', monospace" font-size="10" fill="#6a5a3a" letter-spacing="2">LANGUAGES</text>
+    <line x1="56" y1="568" x2="274" y2="568" stroke="#1a1208" stroke-width="0.8"/>
+    <text x="56" y="588" font-family="'Courier New', monospace" font-size="12" fill="#e8e0d0" class="tech-hover">Python</text>
+    <text x="56" y="608" font-family="'Courier New', monospace" font-size="12" fill="#e8e0d0" class="tech-hover">TypeScript</text>
+    <text x="162" y="588" font-family="'Courier New', monospace" font-size="12" fill="#8a7a5a" class="tech-hover">JavaScript</text>
+    <text x="162" y="608" font-family="'Courier New', monospace" font-size="12" fill="#8a7a5a" class="tech-hover">Java</text>
+    <text x="56" y="628" font-family="'Courier New', monospace" font-size="12" fill="#8a7a5a" class="tech-hover">C</text>
+
+    <rect x="310" y="540" width="250" height="120" fill="#0a0c10" stroke="#1a1208" stroke-width="1" rx="2" filter="url(#shadow)"/>
+    <rect x="310" y="540" width="3" height="120" fill="#8b0000" class="anim-pulse"/>
+    <text x="326" y="560" font-family="'Courier New', monospace" font-size="10" fill="#6a5a3a" letter-spacing="2">FRONTEND</text>
+    <line x1="326" y1="568" x2="544" y2="568" stroke="#1a1208" stroke-width="0.8"/>
+    <text x="326" y="588" font-family="'Courier New', monospace" font-size="12" fill="#e8e0d0" class="tech-hover">React</text>
+    <text x="326" y="608" font-family="'Courier New', monospace" font-size="12" fill="#e8e0d0" class="tech-hover">Next.js</text>
+    <text x="432" y="588" font-family="'Courier New', monospace" font-size="12" fill="#8a7a5a" class="tech-hover">Astro</text>
+    <text x="432" y="608" font-family="'Courier New', monospace" font-size="12" fill="#8a7a5a" class="tech-hover">Tailwind</text>
+    <text x="326" y="628" font-family="'Courier New', monospace" font-size="12" fill="#8a7a5a" class="tech-hover">Three.js</text>
+
+    <rect x="580" y="540" width="280" height="120" fill="#0a0c10" stroke="#1a1208" stroke-width="1" rx="2" filter="url(#shadow)"/>
+    <rect x="580" y="540" width="3" height="120" fill="#8b0000" class="anim-pulse"/>
+    <text x="596" y="560" font-family="'Courier New', monospace" font-size="10" fill="#6a5a3a" letter-spacing="2">INFRA &amp; TOOLS</text>
+    <line x1="596" y1="568" x2="844" y2="568" stroke="#1a1208" stroke-width="0.8"/>
+    <text x="596" y="588" font-family="'Courier New', monospace" font-size="12" fill="#e8e0d0" class="tech-hover">Vite</text>
+    <text x="596" y="608" font-family="'Courier New', monospace" font-size="12" fill="#e8e0d0" class="tech-hover">Vercel</text>
+    <text x="700" y="588" font-family="'Courier New', monospace" font-size="12" fill="#8a7a5a" class="tech-hover">Netlify</text>
+    <text x="700" y="608" font-family="'Courier New', monospace" font-size="12" fill="#8a7a5a" class="tech-hover">GitHub</text>
+    <text x="596" y="628" font-family="'Courier New', monospace" font-size="12" fill="#8a7a5a" class="tech-hover">PowerShell</text>
+
+    <rect x="40" y="680" width="820" height="90" fill="#0a0c10" stroke="#1a1208" stroke-width="1" rx="2" filter="url(#shadow)"/>
+    <rect x="40" y="680" width="4" height="90" fill="#8b0000" class="anim-pulse"/>
+    <text x="56" y="700" font-family="'Courier New', monospace" font-size="10" fill="#8b0000" letter-spacing="2" font-weight="bold">AI / AGENTIC</text>
+    <line x1="56" y1="708" x2="844" y2="708" stroke="#1a1208" stroke-width="0.8"/>
+    <text x="56" y="730" font-family="'Courier New', monospace" font-size="13" fill="#e8e0d0" class="tech-hover">LangChain</text>
+    <text x="180" y="730" font-family="'Courier New', monospace" font-size="13" fill="#e8e0d0" class="tech-hover">LangGraph</text>
+    <text x="312" y="730" font-family="'Courier New', monospace" font-size="13" fill="#8a7a5a" class="tech-hover">OpenAI SDK</text>
+    <text x="452" y="730" font-family="'Courier New', monospace" font-size="13" fill="#8a7a5a" class="tech-hover">Anthropic SDK</text>
+    <text x="616" y="730" font-family="'Courier New', monospace" font-size="13" fill="#8a7a5a" class="tech-hover">CrewAI</text>
+    <text x="714" y="730" font-family="'Courier New', monospace" font-size="13" fill="#8a7a5a" class="tech-hover">FastAPI</text>
+    
+    <text x="56" y="755" font-family="Georgia, serif" font-size="12" fill="#6a5a3a" font-style="italic">the sword that thinks — building systems that adapt and refuse to break</text>
+  </g>
+
+  <line x1="0" y1="800" x2="900" y2="800" stroke="#8b0000" stroke-width="1.5" opacity="0.6"/>
+
+  <rect x="0" y="800" width="900" height="300" fill="#06080f"/>
+  
+  <text x="20" y="1020" font-family="serif" font-size="280" fill="#0c0e16" letter-spacing="-10">侍</text>
+  
+  <g class="anim-glitch">
+    <text x="38" y="878" font-family="Impact, 'Arial Black', sans-serif" font-size="52" fill="#e8e0d0" letter-spacing="-1" opacity="0.9">RIxiV1</text>
+    <text x="41" y="881" font-family="Impact, 'Arial Black', sans-serif" font-size="52" fill="none" stroke="#8b0000" stroke-width="1" letter-spacing="-1" opacity="0.6">RIxiV1</text>
+  </g>
+  
+  <line x1="34" y1="838" x2="200" y2="892" stroke="#8b0000" stroke-width="4" stroke-linecap="round" opacity="0.9" filter="url(#glow-red)"/>
+  <line x1="39" y1="836" x2="205" y2="890" stroke="#fff" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
+
+  <line x1="560" y1="820" x2="560" y2="1030" stroke="#1a1208" stroke-width="2" stroke-linecap="round"/>
+  <rect x="552" y="1000" width="16" height="8" fill="#2a1a08" rx="1"/>
+  <rect x="554" y="1008" width="12" height="30" fill="#1a1208" rx="1"/>
+  <line x1="590" y1="830" x2="590" y2="1020" stroke="#1a1208" stroke-width="2" stroke-linecap="round"/>
+  <rect x="582" y="1000" width="16" height="8" fill="#2a1a08" rx="1"/>
+  <rect x="584" y="1008" width="12" height="30" fill="#1a1208" rx="1"/>
+  <line x1="620" y1="815" x2="620" y2="1040" stroke="#8b0000" stroke-width="2.5" stroke-linecap="round" class="anim-pulse"/>
+  <line x1="622" y1="815" x2="622" y2="1040" stroke="#ff4444" stroke-width="0.6" opacity="0.7"/>
+  <rect x="612" y="998" width="18" height="9" fill="#3a1008" rx="1"/>
+  <rect x="614" y="1007" width="14" height="32" fill="#5a0808" rx="1"/>
+
+  <rect x="680" y="830" width="190" height="62" fill="none" stroke="#e8e0d0" stroke-width="2" rx="2"/>
+  <text x="775" y="854" font-family="'Courier New', monospace" font-size="10" fill="#e8e0d0" text-anchor="middle" letter-spacing="4" font-weight="bold">PARENTAL</text>
+  <line x1="690" y1="860" x2="860" y2="860" stroke="#e8e0d0" stroke-width="1"/>
+  <text x="775" y="882" font-family="Impact, 'Arial Black', sans-serif" font-size="26" fill="#e8e0d0" text-anchor="middle" letter-spacing="2">ADVISORY</text>
+
+  <text x="38" y="930" font-family="Georgia, 'Times New Roman', serif" font-size="16" fill="#8b0000" font-style="italic">"hesitation is defeat"</text>
+  <text x="40" y="952" font-family="'Courier New', monospace" font-size="11" fill="#6a5a3a" letter-spacing="1">— Genichiro Ashina, Sekiro</text>
+
+  <g transform="translate(0, 10)">
+    <circle cx="840" cy="950" r="36" fill="none" stroke="#3a1808" stroke-width="1.5" opacity="0.6"/>
+    <circle cx="840" cy="950" r="30" fill="none" stroke="#2a1808" stroke-width="0.5" opacity="0.4"/>
+    <path d="M840 926 C854 926 863 938 857 947 C851 956 837 953 834 944 C831 935 838 928 844 932 C850 936 851 944 845 948" fill="none" stroke="#3a1808" stroke-width="1.5" opacity="0.8"/>
+    <path d="M858 960 C849 972 836 972 831 963 C826 954 833 944 843 947 C853 950 854 961 847 964 C840 967 833 961 836 954" fill="none" stroke="#3a1808" stroke-width="1.5" opacity="0.8"/>
+  </g>
+
+  <rect x="0" y="1058" width="900" height="42" fill="#080a10"/>
+  <line x1="0" y1="1058" x2="900" y2="1058" stroke="#8b0000" stroke-width="1.5" class="anim-pulse"/>
+  <rect x="0" y="1058" width="4" height="42" fill="#8b0000"/>
+  <text x="20" y="1083" font-family="'Courier New', monospace" font-size="11" fill="#6a5a3a" letter-spacing="2">SHAIK SUHAIB</text>
+  <text x="450" y="1083" font-family="Georgia, serif" font-size="11" fill="#6a5a3a" text-anchor="middle" font-style="italic" letter-spacing="1">one cut. no hesitation.</text>
+  
+  <g>
+    <style>
+      @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+      .cursor { animation: blink 1s step-end infinite; }
+    </style>
+    <text x="880" y="1083" font-family="'Courier New', monospace" font-size="11" fill="#8b0000" text-anchor="end" letter-spacing="1">no signal lost <tspan class="cursor">_</tspan></text>
+  </g>
+</svg>
