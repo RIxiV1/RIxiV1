@@ -96,7 +96,6 @@
     
     <text x="28" y="418" font-family="Georgia, 'Times New Roman', serif" font-size="12" fill="#2a1a0a" font-style="italic" opacity="0.9">hesitation is defeat</text>
     <line x1="28" y1="422" x2="220" y2="422" stroke="#8b0000" stroke-width="0.8" opacity="0.8"/>
-    <text x="28" y="438" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#6a0000" font-style="italic" opacity="0.9">— with a sword</text>
   </g>
 
   <g class="anim-float">
@@ -125,7 +124,7 @@
 
   <text x="400" y="340" font-family="'Courier New', monospace" font-size="11" fill="#8a6a4a" letter-spacing="2" font-weight="bold">AI ENGINEER // AGENTIC SYSTEMS</text>
   <text x="400" y="360" font-family="'Courier New', monospace" font-size="11" fill="#8a6a4a" letter-spacing="2" font-weight="bold">OPEN SOURCE // LLM INFRA</text>
-  <text x="400" y="396" font-family="Georgia, serif" font-size="11" fill="#8b0000" font-style="italic" letter-spacing="1" class="anim-pulse">$ hesitation is defeat — building in public</text>
+  <text x="400" y="396" font-family="Georgia, serif" font-size="11" fill="#8b0000" font-style="italic" letter-spacing="1" class="anim-pulse">— building in public</text>
 
   <g transform="translate(0, 5)">
     <rect x="400" y="418" width="78" height="22" fill="#0d0a08" stroke="#3a2a1a" stroke-width="0.5" rx="1"/>
@@ -192,7 +191,7 @@
     <text x="616" y="730" font-family="'Courier New', monospace" font-size="13" fill="#8a7a5a" class="tech-hover">CrewAI</text>
     <text x="714" y="730" font-family="'Courier New', monospace" font-size="13" fill="#8a7a5a" class="tech-hover">FastAPI</text>
     
-    <text x="56" y="755" font-family="Georgia, serif" font-size="12" fill="#6a5a3a" font-style="italic">the sword that thinks — building systems that adapt and refuse to break</text>
+    <text x="56" y="755" font-family="Georgia, serif" font-size="12" fill="#6a5a3a" font-style="italic">— building systems that adapt and refuse to break</text>
   </g>
 
   <line x1="0" y1="800" x2="900" y2="800" stroke="#8b0000" stroke-width="1.5" opacity="0.6"/>
@@ -226,7 +225,7 @@
   <text x="775" y="882" font-family="Impact, 'Arial Black', sans-serif" font-size="26" fill="#e8e0d0" text-anchor="middle" letter-spacing="2">ADVISORY</text>
 
   <text x="38" y="930" font-family="Georgia, 'Times New Roman', serif" font-size="16" fill="#8b0000" font-style="italic">"hesitation is defeat"</text>
-  <text x="40" y="952" font-family="'Courier New', monospace" font-size="11" fill="#6a5a3a" letter-spacing="1">— Genichiro Ashina, Sekiro</text>
+  <text x="40" y="952" font-family="'Courier New', monospace" font-size="11" fill="#6a5a3a" letter-spacing="1">— Genichiro Ashina</text>
 
   <g transform="translate(0, 10)">
     <circle cx="840" cy="950" r="36" fill="none" stroke="#3a1808" stroke-width="1.5" opacity="0.6"/>
