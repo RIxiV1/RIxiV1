@@ -132,32 +132,6 @@
   <text x="400" y="360" font-family="'Courier New', monospace" font-size="11" fill="#8a6a4a" letter-spacing="2" font-weight="bold">OPEN SOURCE // LLM INFRA</text>
   <text x="400" y="396" font-family="Georgia, serif" font-size="11" fill="#8b0000" font-style="italic" letter-spacing="1" class="anim-pulse">— building in public</text>
 
-  <g transform="translate(0, 5)">
-    <a href="https://linkedin.com/in/YOUR_USERNAME" target="_blank" class="nav-link">
-      <rect x="400" y="418" width="78" height="22" fill="#0d0a08" stroke="#3a2a1a" stroke-width="0.5" rx="1"/>
-      <text x="439" y="433" font-family="'Courier New', monospace" font-size="9" fill="#c8a86a" text-anchor="middle" letter-spacing="1">LINKEDIN</text>
-    </a>
-    
-    <a href="https://x.com/YOUR_USERNAME" target="_blank" class="nav-link">
-      <rect x="486" y="418" width="52" height="22" fill="#0d0a08" stroke="#3a2a1a" stroke-width="0.5" rx="1"/>
-      <text x="512" y="433" font-family="'Courier New', monospace" font-size="9" fill="#c8a86a" text-anchor="middle" letter-spacing="1">X/TW</text>
-    </a>
-    
-    <a href="https://medium.com/@YOUR_USERNAME" target="_blank" class="nav-link">
-      <rect x="546" y="418" width="68" height="22" fill="#0d0a08" stroke="#3a2a1a" stroke-width="0.5" rx="1"/>
-      <text x="580" y="433" font-family="'Courier New', monospace" font-size="9" fill="#c8a86a" text-anchor="middle" letter-spacing="1">MEDIUM</text>
-    </a>
-    
-    <a href="mailto:your.email@example.com" class="nav-link">
-      <rect x="622" y="418" width="56" height="22" fill="#0d0a08" stroke="#3a2a1a" stroke-width="0.5" rx="1"/>
-      <text x="650" y="433" font-family="'Courier New', monospace" font-size="9" fill="#c8a86a" text-anchor="middle" letter-spacing="1">EMAIL</text>
-    </a>
-    
-    <a href="https://ko-fi.com/YOUR_USERNAME" target="_blank" class="nav-link">
-      <rect x="686" y="418" width="54" height="22" fill="#0d0a08" stroke="#3a2a1a" stroke-width="0.5" rx="1"/>
-      <text x="713" y="433" font-family="'Courier New', monospace" font-size="9" fill="#c8a86a" text-anchor="middle" letter-spacing="1">KO-FI</text>
-    </a>
-  </g>
 
   <line x1="0" y1="475" x2="900" y2="475" stroke="#8b0000" stroke-width="1.5" opacity="0.6" class="anim-pulse"/>
 
