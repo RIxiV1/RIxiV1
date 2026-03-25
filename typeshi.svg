@@ -209,10 +209,10 @@
   <rect x="612" y="998" width="18" height="9" fill="#3a1008" rx="1"/>
   <rect x="614" y="1007" width="14" height="32" fill="#5a0808" rx="1"/>
 
-  <rect x="680" y="830" width="190" height="62" fill="none" stroke="#e8e0d0" stroke-width="2" rx="2"/>
-  <text x="775" y="854" font-family="'Courier New', monospace" font-size="10" fill="#e8e0d0" text-anchor="middle" letter-spacing="4" font-weight="bold">PARENTAL</text>
-  <line x1="690" y1="860" x2="860" y2="860" stroke="#e8e0d0" stroke-width="1"/>
-  <text x="775" y="882" font-family="Impact, 'Arial Black', sans-serif" font-size="26" fill="#e8e0d0" text-anchor="middle" letter-spacing="2">ADVISORY</text>
+  <rect x="680" y="830" width="190" height="62" fill="none" stroke="#8a6a4a" stroke-width="1.5" rx="2" opacity="0.8"/>
+  <text x="775" y="852" font-family="'Courier New', monospace" font-size="10" fill="#8a6a4a" text-anchor="middle" letter-spacing="4" font-weight="bold">PURPOSE DRIVEN</text>
+  <line x1="700" y1="860" x2="850" y2="860" stroke="#8a6a4a" stroke-width="1" opacity="0.6"/>
+  <text x="775" y="882" font-family="Georgia, serif" font-size="20" fill="#e8e0d0" text-anchor="middle" font-style="italic">Inner Peace</text>
 
   <text x="38" y="930" font-family="Georgia, 'Times New Roman', serif" font-size="16" fill="#8b0000" font-style="italic">"hesitation is defeat"</text>
   <text x="40" y="952" font-family="'Courier New', monospace" font-size="11" fill="#6a5a3a" letter-spacing="1">— Genichiro Ashina</text>
