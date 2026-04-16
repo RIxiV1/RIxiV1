@@ -4,6 +4,10 @@
 
 <br/>
 
+<div align="center"><b>🤖 AI Engineer | Agentic Systems Architect | LLM Infrastructure • Building autonomous agents &amp; multi-agent orchestration pipelines</b></div>
+
+<br/>
+
 <div align="center">
   <a href="https://github.com/RIxiV1">
     <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=1000&color=8B0000&center=true&vCenter=true&multiline=true&repeat=true&width=700&height=80&lines=%E2%9A%94+AI+Engineer+%7C+Agentic+Systems+%7C+LLM+Infra;building+systems+that+adapt+and+refuse+to+break" alt="Typing SVG" />
