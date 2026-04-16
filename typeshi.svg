@@ -1,7 +1,11 @@
 <svg width="100%" viewBox="0 0 900 1100" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="typeshi-title typeshi-desc">
   <title id="typeshi-title">Shaik Suhaib — AI Engineer and Agentic Systems Specialist</title>
   <desc id="typeshi-desc">Samurai-themed profile card showing name, focus areas, and technical arsenal across languages, frontend, infrastructure, and AI agentic tooling.</desc>
-  <metadata>Profile SVG with samurai-inspired visual style and animated technical sections.</metadata>
+  <metadata>
+    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+      <rdf:Description dc:title="Shaik Suhaib profile SVG" dc:description="Samurai-themed profile SVG with animated technical arsenal sections."/>
+    </rdf:RDF>
+  </metadata>
   <defs>
     <style>
       svg {
@@ -40,12 +44,13 @@
       .cursor { animation: blink 1s step-end infinite; }
       .with-shadow { filter: url(#shadow); }
       .mono { font-family: var(--font-mono); }
-      .tech-title { fill: var(--color-muted); font-family: var(--font-mono); font-size: 10px; letter-spacing: 2px; }
-      .tech-title-primary { fill: var(--color-primary); font-family: var(--font-mono); font-size: 10px; letter-spacing: 2px; font-weight: bold; }
-      .tech-main { fill: var(--color-accent); font-family: var(--font-mono); font-size: 12px; }
-      .tech-main-lg { fill: var(--color-accent); font-family: var(--font-mono); font-size: 13px; }
-      .tech-muted { fill: var(--color-tech-alt); font-family: var(--font-mono); font-size: 12px; }
-      .tech-muted-lg { fill: var(--color-tech-alt); font-family: var(--font-mono); font-size: 13px; }
+      .tech-title, .tech-title-primary { font-family: var(--font-mono); font-size: 10px; letter-spacing: 2px; }
+      .tech-title { fill: var(--color-muted); }
+      .tech-title-primary { fill: var(--color-primary); font-weight: bold; }
+      .tech-main, .tech-muted { font-family: var(--font-mono); font-size: 12px; }
+      .tech-main-lg, .tech-muted-lg { font-family: var(--font-mono); font-size: 13px; }
+      .tech-main, .tech-main-lg { fill: var(--color-accent); }
+      .tech-muted, .tech-muted-lg { fill: var(--color-tech-alt); }
       .tech-divider { stroke: var(--color-border); stroke-width: 0.8; }
 
       /* Hover effects for clickable buttons */
