@@ -1,7 +1,7 @@
 <svg width="100%" viewBox="0 0 900 1100" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="typeshi-title typeshi-desc">
   <title id="typeshi-title">Shaik Suhaib — AI Engineer and Agentic Systems Specialist</title>
   <desc id="typeshi-desc">Samurai-themed profile card showing name, focus areas, and technical arsenal across languages, frontend, infrastructure, and AI agentic tooling.</desc>
-  <metadata>RIxiV1 profile SVG with decorative samurai-inspired visual style and animated technical sections.</metadata>
+  <metadata>Profile SVG with samurai-inspired visual style and animated technical sections.</metadata>
   <defs>
     <style>
       svg {
@@ -41,6 +41,7 @@
       .with-shadow { filter: url(#shadow); }
       .mono { font-family: var(--font-mono); }
       .tech-title { fill: var(--color-muted); font-family: var(--font-mono); font-size: 10px; letter-spacing: 2px; }
+      .tech-title-primary { fill: var(--color-primary); font-family: var(--font-mono); font-size: 10px; letter-spacing: 2px; font-weight: bold; }
       .tech-main { fill: var(--color-accent); font-family: var(--font-mono); font-size: 12px; }
       .tech-main-lg { fill: var(--color-accent); font-family: var(--font-mono); font-size: 13px; }
       .tech-muted { fill: var(--color-tech-alt); font-family: var(--font-mono); font-size: 12px; }
@@ -206,7 +207,7 @@
     <text x="596" y="628" class="tech-muted tech-hover">PowerShell</text>
 
     <use href="#tech-card-820" transform="translate(40 680)" class="with-shadow"/>
-    <text x="56" y="700" class="tech-title" fill="var(--color-primary)" font-weight="bold">AI / AGENTIC</text>
+    <text x="56" y="700" class="tech-title-primary">AI / AGENTIC</text>
     <text x="56" y="730" class="tech-main-lg tech-hover">LangChain</text>
     <text x="180" y="730" class="tech-main-lg tech-hover">LangGraph</text>
     <text x="312" y="730" class="tech-muted-lg tech-hover">OpenAI SDK</text>
