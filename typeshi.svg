@@ -4,7 +4,7 @@
   <metadata>RIxiV1 profile SVG with decorative samurai-inspired visual style and animated technical sections.</metadata>
   <defs>
     <style>
-      :root {
+      svg {
         --color-bg: #06080f;
         --color-bg-muted: #080a10;
         --color-card: #0a0c10;
