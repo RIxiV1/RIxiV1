@@ -3,7 +3,10 @@
   <desc id="typeshi-desc">Samurai-themed profile card showing name, focus areas, and technical arsenal across languages, frontend, infrastructure, and AI agentic tooling.</desc>
   <metadata>
     <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
-      <rdf:Description dc:title="Shaik Suhaib profile SVG" dc:description="Samurai-themed profile SVG with animated technical arsenal sections."/>
+      <rdf:Description rdf:about="">
+        <dc:title>Shaik Suhaib profile SVG</dc:title>
+        <dc:description>Samurai-themed profile SVG with animated technical arsenal sections.</dc:description>
+      </rdf:Description>
     </rdf:RDF>
   </metadata>
   <defs>
