@@ -22,6 +22,7 @@
         --color-tech-alt: #8a7a5a;
         --font-mono: 'Courier New', monospace;
         --font-display: Impact, 'Arial Black', sans-serif;
+        --font-serif: Georgia, serif;
       }
       @keyframes pulseRed {
         0% { opacity: 0.4; filter: drop-shadow(0 0 2px rgba(139,0,0,0.5)); }
@@ -47,6 +48,9 @@
       .cursor { animation: blink 1s step-end infinite; }
       .with-shadow { filter: url(#shadow); }
       .mono { font-family: var(--font-mono); }
+      .display { font-family: var(--font-display); }
+      .serif { font-family: var(--font-serif); }
+      .muted { fill: var(--color-muted); }
       .tech-title, .tech-title-primary { font-family: var(--font-mono); font-size: 10px; letter-spacing: 2px; }
       .tech-title { fill: var(--color-muted); }
       .tech-title-primary { fill: var(--color-primary); font-weight: bold; }
@@ -186,7 +190,7 @@
   <line x1="0" y1="475" x2="900" y2="475" stroke="#8b0000" stroke-width="1.5" opacity="0.6" class="anim-pulse"/>
 
   <rect x="0" y="475" width="900" height="325" fill="var(--color-bg-muted)"/>
-  <text x="40" y="515" font-family="Impact, 'Arial Black', sans-serif" font-size="12" fill="var(--color-primary)" letter-spacing="5">ARSENAL</text>
+  <text x="40" y="515" class="display" font-size="12" fill="var(--color-primary)" letter-spacing="5">ARSENAL</text>
   <line x1="40" y1="525" x2="860" y2="525" stroke="#1a1208" stroke-width="1"/>
 
   <g>
@@ -233,8 +237,8 @@
   <text x="20" y="1020" font-family="serif" font-size="280" fill="#0c0e16" letter-spacing="-10">侍</text>
   
   <g class="anim-glitch">
-    <text x="38" y="878" font-family="Impact, 'Arial Black', sans-serif" font-size="52" fill="#e8e0d0" letter-spacing="-1" opacity="0.9">RIxiV1</text>
-    <text x="41" y="881" font-family="Impact, 'Arial Black', sans-serif" font-size="52" fill="none" stroke="#8b0000" stroke-width="1" letter-spacing="-1" opacity="0.6">RIxiV1</text>
+    <text x="38" y="878" class="display" font-size="52" fill="var(--color-accent)" letter-spacing="-1" opacity="0.9">RIxiV1</text>
+    <text x="41" y="881" class="display" font-size="52" fill="none" stroke="#8b0000" stroke-width="1" letter-spacing="-1" opacity="0.6">RIxiV1</text>
   </g>
   
   <line x1="34" y1="838" x2="200" y2="892" stroke="#8b0000" stroke-width="4" stroke-linecap="round" opacity="0.9" filter="url(#glow-red)"/>
@@ -274,7 +278,7 @@
   <line x1="0" y1="1058" x2="900" y2="1058" stroke="#8b0000" stroke-width="1.5" class="anim-pulse"/>
   <rect x="0" y="1058" width="4" height="42" fill="#8b0000"/>
   <text x="20" y="1083" font-family="'Courier New', monospace" font-size="11" fill="#6a5a3a" letter-spacing="2">SHAIK SUHAIB</text>
-  <text x="450" y="1083" font-family="Georgia, serif" font-size="11" fill="#6a5a3a" text-anchor="middle" font-style="italic" letter-spacing="1">one cut. no hesitation.</text>
+  <text x="450" y="1083" class="serif muted" font-size="11" text-anchor="middle" font-style="italic" letter-spacing="1">one cut. no hesitation.</text>
   
-  <text x="880" y="1083" class="mono" font-size="11" fill="#8b0000" text-anchor="end" letter-spacing="1">no signal lost <tspan class="cursor">_</tspan></text>
+  <text x="880" y="1083" class="mono" font-size="11" fill="var(--color-primary)" text-anchor="end" letter-spacing="1">no signal lost <tspan class="cursor">_</tspan></text>
 </svg>
