@@ -227,7 +227,7 @@
     <text x="616" y="730" class="tech-muted-lg tech-hover">CrewAI</text>
     <text x="714" y="730" class="tech-muted-lg tech-hover">FastAPI</text>
     
-    <text x="56" y="755" font-family="Georgia, serif" font-size="12" fill="#6a5a3a" font-style="italic">— building systems that adapt and refuse to break</text>
+    <text x="56" y="755" class="serif muted" font-size="12" font-style="italic">— building systems that adapt and refuse to break</text>
   </g>
 
   <line x1="0" y1="800" x2="900" y2="800" stroke="#8b0000" stroke-width="1.5" opacity="0.6"/>
