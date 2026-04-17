@@ -1,6 +1,29 @@
-<svg width="100%" viewBox="0 0 900 1100" xmlns="http://www.w3.org/2000/svg">
+<svg width="100%" viewBox="0 0 900 1100" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="typeshi-title typeshi-desc">
+  <title id="typeshi-title">Shaik Suhaib — AI Engineer and Agentic Systems Specialist</title>
+  <desc id="typeshi-desc">Samurai-themed profile card showing name, focus areas, and technical arsenal across languages, frontend, infrastructure, and AI agentic tooling.</desc>
+  <metadata>
+    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+      <rdf:Description rdf:about="">
+        <dc:title>Shaik Suhaib profile SVG</dc:title>
+        <dc:description>Samurai-themed profile SVG with animated technical arsenal sections.</dc:description>
+      </rdf:Description>
+    </rdf:RDF>
+  </metadata>
   <defs>
     <style>
+      svg {
+        --color-bg: #06080f;
+        --color-bg-muted: #080a10;
+        --color-card: #0a0c10;
+        --color-primary: #8b0000;
+        --color-accent: #e8e0d0;
+        --color-border: #1a1208;
+        --color-muted: #6a5a3a;
+        --color-tech-alt: #8a7a5a;
+        --font-mono: 'Courier New', monospace;
+        --font-display: Impact, 'Arial Black', sans-serif;
+        --font-serif: Georgia, serif;
+      }
       @keyframes pulseRed {
         0% { opacity: 0.4; filter: drop-shadow(0 0 2px rgba(139,0,0,0.5)); }
         50% { opacity: 0.9; filter: drop-shadow(0 0 8px rgba(139,0,0,0.9)); }
@@ -18,10 +41,25 @@
         50% { transform: translateY(-4px); }
         100% { transform: translateY(0px); }
       }
+      @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
       .anim-pulse { animation: pulseRed 4s infinite ease-in-out; }
       .anim-glitch { animation: glitch 3s infinite; }
       .anim-float { animation: float 6s infinite ease-in-out; }
-      
+      .cursor { animation: blink 1s step-end infinite; }
+      .with-shadow { filter: url(#shadow); }
+      .mono { font-family: var(--font-mono); }
+      .display { font-family: var(--font-display); }
+      .serif { font-family: var(--font-serif); }
+      .muted { fill: var(--color-muted); }
+      .tech-title, .tech-title-primary { font-family: var(--font-mono); font-size: 10px; letter-spacing: 2px; }
+      .tech-title { fill: var(--color-muted); }
+      .tech-title-primary { fill: var(--color-primary); font-weight: bold; }
+      .tech-main, .tech-muted { font-family: var(--font-mono); font-size: 12px; }
+      .tech-main-lg, .tech-muted-lg { font-family: var(--font-mono); font-size: 13px; }
+      .tech-main, .tech-main-lg { fill: var(--color-accent); }
+      .tech-muted, .tech-muted-lg { fill: var(--color-tech-alt); }
+      .tech-divider { stroke: var(--color-border); stroke-width: 0.8; }
+
       /* Hover effects for clickable buttons */
       .nav-link { cursor: pointer; outline: none; }
       .nav-link rect { transition: all 0.2s ease; }
@@ -54,9 +92,25 @@
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
+
+    <g id="tech-card-250">
+      <rect width="250" height="120" fill="var(--color-card)" stroke="var(--color-border)" stroke-width="1" rx="2"/>
+      <rect width="3" height="120" fill="var(--color-primary)" class="anim-pulse"/>
+      <line x1="16" y1="28" x2="234" y2="28" class="tech-divider"/>
+    </g>
+    <g id="tech-card-280">
+      <rect width="280" height="120" fill="var(--color-card)" stroke="var(--color-border)" stroke-width="1" rx="2"/>
+      <rect width="3" height="120" fill="var(--color-primary)" class="anim-pulse"/>
+      <line x1="16" y1="28" x2="264" y2="28" class="tech-divider"/>
+    </g>
+    <g id="tech-card-820">
+      <rect width="820" height="90" fill="var(--color-card)" stroke="var(--color-border)" stroke-width="1" rx="2"/>
+      <rect width="4" height="90" fill="var(--color-primary)" class="anim-pulse"/>
+      <line x1="16" y1="28" x2="804" y2="28" class="tech-divider"/>
+    </g>
   </defs>
 
-  <rect width="900" height="1100" fill="#06080f"/>
+  <rect width="900" height="1100" fill="var(--color-bg)"/>
   <rect width="900" height="1100" fill="url(#dots)"/>
   <rect width="900" height="1100" fill="url(#grid)"/>
   
@@ -135,53 +189,45 @@
 
   <line x1="0" y1="475" x2="900" y2="475" stroke="#8b0000" stroke-width="1.5" opacity="0.6" class="anim-pulse"/>
 
-  <rect x="0" y="475" width="900" height="325" fill="#080a10"/>
-  <text x="40" y="515" font-family="Impact, 'Arial Black', sans-serif" font-size="12" fill="#8b0000" letter-spacing="5">ARSENAL</text>
+  <rect x="0" y="475" width="900" height="325" fill="var(--color-bg-muted)"/>
+  <text x="40" y="515" class="display" font-size="12" fill="var(--color-primary)" letter-spacing="5">ARSENAL</text>
   <line x1="40" y1="525" x2="860" y2="525" stroke="#1a1208" stroke-width="1"/>
 
   <g>
-    <rect x="40" y="540" width="250" height="120" fill="#0a0c10" stroke="#1a1208" stroke-width="1" rx="2" filter="url(#shadow)"/>
-    <rect x="40" y="540" width="3" height="120" fill="#8b0000" class="anim-pulse"/>
-    <text x="56" y="560" font-family="'Courier New', monospace" font-size="10" fill="#6a5a3a" letter-spacing="2">LANGUAGES</text>
-    <line x1="56" y1="568" x2="274" y2="568" stroke="#1a1208" stroke-width="0.8"/>
-    <text x="56" y="588" font-family="'Courier New', monospace" font-size="12" fill="#e8e0d0" class="tech-hover">Python</text>
-    <text x="56" y="608" font-family="'Courier New', monospace" font-size="12" fill="#e8e0d0" class="tech-hover">TypeScript</text>
-    <text x="162" y="588" font-family="'Courier New', monospace" font-size="12" fill="#8a7a5a" class="tech-hover">JavaScript</text>
-    <text x="162" y="608" font-family="'Courier New', monospace" font-size="12" fill="#8a7a5a" class="tech-hover">Java</text>
-    <text x="56" y="628" font-family="'Courier New', monospace" font-size="12" fill="#8a7a5a" class="tech-hover">C</text>
+    <use href="#tech-card-250" transform="translate(40 540)" class="with-shadow"/>
+    <text x="56" y="560" class="tech-title">LANGUAGES</text>
+    <text x="56" y="588" class="tech-main tech-hover">Python</text>
+    <text x="56" y="608" class="tech-main tech-hover">TypeScript</text>
+    <text x="162" y="588" class="tech-muted tech-hover">JavaScript</text>
+    <text x="162" y="608" class="tech-muted tech-hover">Java</text>
+    <text x="56" y="628" class="tech-muted tech-hover">C</text>
 
-    <rect x="310" y="540" width="250" height="120" fill="#0a0c10" stroke="#1a1208" stroke-width="1" rx="2" filter="url(#shadow)"/>
-    <rect x="310" y="540" width="3" height="120" fill="#8b0000" class="anim-pulse"/>
-    <text x="326" y="560" font-family="'Courier New', monospace" font-size="10" fill="#6a5a3a" letter-spacing="2">FRONTEND</text>
-    <line x1="326" y1="568" x2="544" y2="568" stroke="#1a1208" stroke-width="0.8"/>
-    <text x="326" y="588" font-family="'Courier New', monospace" font-size="12" fill="#e8e0d0" class="tech-hover">React</text>
-    <text x="326" y="608" font-family="'Courier New', monospace" font-size="12" fill="#e8e0d0" class="tech-hover">Next.js</text>
-    <text x="432" y="588" font-family="'Courier New', monospace" font-size="12" fill="#8a7a5a" class="tech-hover">Astro</text>
-    <text x="432" y="608" font-family="'Courier New', monospace" font-size="12" fill="#8a7a5a" class="tech-hover">Tailwind</text>
-    <text x="326" y="628" font-family="'Courier New', monospace" font-size="12" fill="#8a7a5a" class="tech-hover">Three.js</text>
+    <use href="#tech-card-250" transform="translate(310 540)" class="with-shadow"/>
+    <text x="326" y="560" class="tech-title">FRONTEND</text>
+    <text x="326" y="588" class="tech-main tech-hover">React</text>
+    <text x="326" y="608" class="tech-main tech-hover">Next.js</text>
+    <text x="432" y="588" class="tech-muted tech-hover">Astro</text>
+    <text x="432" y="608" class="tech-muted tech-hover">Tailwind</text>
+    <text x="326" y="628" class="tech-muted tech-hover">Three.js</text>
 
-    <rect x="580" y="540" width="280" height="120" fill="#0a0c10" stroke="#1a1208" stroke-width="1" rx="2" filter="url(#shadow)"/>
-    <rect x="580" y="540" width="3" height="120" fill="#8b0000" class="anim-pulse"/>
-    <text x="596" y="560" font-family="'Courier New', monospace" font-size="10" fill="#6a5a3a" letter-spacing="2">INFRA &amp; TOOLS</text>
-    <line x1="596" y1="568" x2="844" y2="568" stroke="#1a1208" stroke-width="0.8"/>
-    <text x="596" y="588" font-family="'Courier New', monospace" font-size="12" fill="#e8e0d0" class="tech-hover">Vite</text>
-    <text x="596" y="608" font-family="'Courier New', monospace" font-size="12" fill="#e8e0d0" class="tech-hover">Vercel</text>
-    <text x="700" y="588" font-family="'Courier New', monospace" font-size="12" fill="#8a7a5a" class="tech-hover">Netlify</text>
-    <text x="700" y="608" font-family="'Courier New', monospace" font-size="12" fill="#8a7a5a" class="tech-hover">GitHub</text>
-    <text x="596" y="628" font-family="'Courier New', monospace" font-size="12" fill="#8a7a5a" class="tech-hover">PowerShell</text>
+    <use href="#tech-card-280" transform="translate(580 540)" class="with-shadow"/>
+    <text x="596" y="560" class="tech-title">INFRA &amp; TOOLS</text>
+    <text x="596" y="588" class="tech-main tech-hover">Vite</text>
+    <text x="596" y="608" class="tech-main tech-hover">Vercel</text>
+    <text x="700" y="588" class="tech-muted tech-hover">Netlify</text>
+    <text x="700" y="608" class="tech-muted tech-hover">GitHub</text>
+    <text x="596" y="628" class="tech-muted tech-hover">PowerShell</text>
 
-    <rect x="40" y="680" width="820" height="90" fill="#0a0c10" stroke="#1a1208" stroke-width="1" rx="2" filter="url(#shadow)"/>
-    <rect x="40" y="680" width="4" height="90" fill="#8b0000" class="anim-pulse"/>
-    <text x="56" y="700" font-family="'Courier New', monospace" font-size="10" fill="#8b0000" letter-spacing="2" font-weight="bold">AI / AGENTIC</text>
-    <line x1="56" y1="708" x2="844" y2="708" stroke="#1a1208" stroke-width="0.8"/>
-    <text x="56" y="730" font-family="'Courier New', monospace" font-size="13" fill="#e8e0d0" class="tech-hover">LangChain</text>
-    <text x="180" y="730" font-family="'Courier New', monospace" font-size="13" fill="#e8e0d0" class="tech-hover">LangGraph</text>
-    <text x="312" y="730" font-family="'Courier New', monospace" font-size="13" fill="#8a7a5a" class="tech-hover">OpenAI SDK</text>
-    <text x="452" y="730" font-family="'Courier New', monospace" font-size="13" fill="#8a7a5a" class="tech-hover">Anthropic SDK</text>
-    <text x="616" y="730" font-family="'Courier New', monospace" font-size="13" fill="#8a7a5a" class="tech-hover">CrewAI</text>
-    <text x="714" y="730" font-family="'Courier New', monospace" font-size="13" fill="#8a7a5a" class="tech-hover">FastAPI</text>
+    <use href="#tech-card-820" transform="translate(40 680)" class="with-shadow"/>
+    <text x="56" y="700" class="tech-title-primary">AI / AGENTIC</text>
+    <text x="56" y="730" class="tech-main-lg tech-hover">LangChain</text>
+    <text x="180" y="730" class="tech-main-lg tech-hover">LangGraph</text>
+    <text x="312" y="730" class="tech-muted-lg tech-hover">OpenAI SDK</text>
+    <text x="452" y="730" class="tech-muted-lg tech-hover">Anthropic SDK</text>
+    <text x="616" y="730" class="tech-muted-lg tech-hover">CrewAI</text>
+    <text x="714" y="730" class="tech-muted-lg tech-hover">FastAPI</text>
     
-    <text x="56" y="755" font-family="Georgia, serif" font-size="12" fill="#6a5a3a" font-style="italic">— building systems that adapt and refuse to break</text>
+    <text x="56" y="755" class="serif muted" font-size="12" font-style="italic">— building systems that adapt and refuse to break</text>
   </g>
 
   <line x1="0" y1="800" x2="900" y2="800" stroke="#8b0000" stroke-width="1.5" opacity="0.6"/>
@@ -191,20 +237,24 @@
   <text x="20" y="1020" font-family="serif" font-size="280" fill="#0c0e16" letter-spacing="-10">侍</text>
   
   <g class="anim-glitch">
-    <text x="38" y="878" font-family="Impact, 'Arial Black', sans-serif" font-size="52" fill="#e8e0d0" letter-spacing="-1" opacity="0.9">RIxiV1</text>
-    <text x="41" y="881" font-family="Impact, 'Arial Black', sans-serif" font-size="52" fill="none" stroke="#8b0000" stroke-width="1" letter-spacing="-1" opacity="0.6">RIxiV1</text>
+    <text x="38" y="878" class="display" font-size="52" fill="var(--color-accent)" letter-spacing="-1" opacity="0.9">RIxiV1</text>
+    <text x="41" y="881" class="display" font-size="52" fill="none" stroke="#8b0000" stroke-width="1" letter-spacing="-1" opacity="0.6">RIxiV1</text>
   </g>
   
   <line x1="34" y1="838" x2="200" y2="892" stroke="#8b0000" stroke-width="4" stroke-linecap="round" opacity="0.9" filter="url(#glow-red)"/>
   <line x1="39" y1="836" x2="205" y2="890" stroke="#fff" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
 
-  <line x1="560" y1="820" x2="560" y2="1030" stroke="#1a1208" stroke-width="2" stroke-linecap="round"/>
-  <rect x="552" y="1000" width="16" height="8" fill="#2a1a08" rx="1"/>
-  <rect x="554" y="1008" width="12" height="30" fill="#1a1208" rx="1"/>
-  <line x1="590" y1="830" x2="590" y2="1020" stroke="#1a1208" stroke-width="2" stroke-linecap="round"/>
-  <rect x="582" y="1000" width="16" height="8" fill="#2a1a08" rx="1"/>
-  <rect x="584" y="1008" width="12" height="30" fill="#1a1208" rx="1"/>
-  <line x1="620" y1="815" x2="620" y2="1040" stroke="#8b0000" stroke-width="2.5" stroke-linecap="round" class="anim-pulse"/>
+  <g stroke-linecap="round">
+    <line x1="560" y1="820" x2="560" y2="1030" stroke="#1a1208" stroke-width="2"/>
+    <line x1="590" y1="830" x2="590" y2="1020" stroke="#1a1208" stroke-width="2"/>
+    <line x1="620" y1="815" x2="620" y2="1040" stroke="#8b0000" stroke-width="2.5" class="anim-pulse"/>
+  </g>
+  <g>
+    <rect x="552" y="1000" width="16" height="8" fill="#2a1a08" rx="1"/>
+    <rect x="582" y="1000" width="16" height="8" fill="#2a1a08" rx="1"/>
+    <rect x="554" y="1008" width="12" height="30" fill="#1a1208" rx="1"/>
+    <rect x="584" y="1008" width="12" height="30" fill="#1a1208" rx="1"/>
+  </g>
   <line x1="622" y1="815" x2="622" y2="1040" stroke="#ff4444" stroke-width="0.6" opacity="0.7"/>
   <rect x="612" y="998" width="18" height="9" fill="#3a1008" rx="1"/>
   <rect x="614" y="1007" width="14" height="32" fill="#5a0808" rx="1"/>
@@ -228,13 +278,7 @@
   <line x1="0" y1="1058" x2="900" y2="1058" stroke="#8b0000" stroke-width="1.5" class="anim-pulse"/>
   <rect x="0" y="1058" width="4" height="42" fill="#8b0000"/>
   <text x="20" y="1083" font-family="'Courier New', monospace" font-size="11" fill="#6a5a3a" letter-spacing="2">SHAIK SUHAIB</text>
-  <text x="450" y="1083" font-family="Georgia, serif" font-size="11" fill="#6a5a3a" text-anchor="middle" font-style="italic" letter-spacing="1">one cut. no hesitation.</text>
+  <text x="450" y="1083" class="serif muted" font-size="11" text-anchor="middle" font-style="italic" letter-spacing="1">one cut. no hesitation.</text>
   
-  <g>
-    <style>
-      @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
-      .cursor { animation: blink 1s step-end infinite; }
-    </style>
-    <text x="880" y="1083" font-family="'Courier New', monospace" font-size="11" fill="#8b0000" text-anchor="end" letter-spacing="1">no signal lost <tspan class="cursor">_</tspan></text>
-  </g>
+  <text x="880" y="1083" class="mono" font-size="11" fill="var(--color-primary)" text-anchor="end" letter-spacing="1">no signal lost <tspan class="cursor">_</tspan></text>
 </svg>
