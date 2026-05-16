@@ -14,7 +14,7 @@ Agentic Systems • LLM Infra • Open Source
 
 ## 🟥 About me
 
-I'm an **AI Engineer** focused on building **agentic systems** and **LLM-powered tooling**. I work across the stack — from raw model infrastructure to the polished interface someone actually touches — and care about **clean code**, **clear scope**, and **shipping in public**.
+I'm an **AI Engineer** focused on building **agentic systems** and **LLM-powered tooling**. I work across the stack from raw model infrastructure to the polished interface someone actually touches and care about **clean code**, **clear scope**, and **shipping in public**.
 
 - **Main focus:** Autonomous agents, multi-agent orchestration, and LLM workflows
 - **Technical interests:** LangGraph pipelines, RAG, model context protocols, and frontend systems
