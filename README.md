@@ -7,4 +7,5 @@ Currently grinding through my Btech in IT out in Tamil Nadu.
 When I'm free, I be posting tech content on Medium, and gaming mostly.
 
 Let's lock in! 🤝
+
  [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/RIxiV1) [![LinkedIn](https://img.shields.io/badge/LINKEDIN-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/shaiksuhaib) [![Gmail](https://img.shields.io/badge/GMAIL-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:shaiksuhaib360@gmail.com)
