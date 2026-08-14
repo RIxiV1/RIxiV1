@@ -66,55 +66,26 @@ AI/ML, and product engineering.
 <a href="https://github.com/RIxiV1/shadowscan"><b>shadowscan</b></a>
 &nbsp;·&nbsp; react, typescript, node.js
 <br>
-AI Governance & Shadow AI Detection Platform.
-Detects unsanctioned AI usage and turns access data into risk scores,
-audit findings, and governance reports.
+Shadow AI detection and governance platform.
 </p>
 
 <p>
 <a href="https://github.com/RIxiV1/DIGITAL-CLINIC"><b>DIGITAL-CLINIC</b></a>
 &nbsp;·&nbsp; react, typescript, vite
 <br>
-Private browser-based lab report interpreter using PDF parsing and OCR
-to turn difficult reports into plain-language explanations and trends.
+Turns lab reports into clear, plain-language explanations.
 </p>
 
 <p>
 <a href="https://github.com/RIxiV1/Caliber"><b>Caliber</b></a>
 &nbsp;·&nbsp; react, typescript, supabase
 <br>
-AI resume screening and HR review platform with structured candidate
-scoring, reasoning, and realtime review workflows.
+AI-powered resume screening and HR review platform.
 </p>
 
 <p>
 <a href="https://github.com/RIxiV1/InfoBlend"><b>InfoBlend</b></a>
 &nbsp;·&nbsp; javascript, manifest v3
 <br>
-Browser extension for definitions, translations, summaries,
-pronunciation, and a local knowledge vault.
-</p>
-
-<p>
-<a href="https://github.com/RIxiV1/portfolio"><b>portfolio</b></a>
-&nbsp;·&nbsp; next.js, react, typescript
-<br>
-Personal portfolio built around real project case studies,
-product screenshots, animations, and accessibility.
-</p>
-
-<p>
-<a href="https://github.com/RIxiV1/KnowledgeForge"><b>KnowledgeForge</b></a>
-&nbsp;·&nbsp; python, ollama, chromadb
-<br>
-Local-first RAG application for searching personal documents
-and answering questions with citations.
-</p>
-
-<p>
-<a href="https://github.com/RIxiV1/SubSentry"><b>SubSentry</b></a>
-&nbsp;·&nbsp; react, typescript, supabase
-<br>
-Privacy-conscious subscription tracking without connecting directly
-to your bank.
+Browser extension for understanding and organizing web content.
 </p>
