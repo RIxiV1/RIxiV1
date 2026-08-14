@@ -1,0 +1,225 @@
+<svg
+xmlns="http://www.w3.org/2000/svg"
+width="900"
+height="520"
+viewBox="0 0 900 520">
+
+<rect
+    width="100%"
+    height="100%"
+    fill="#ffffff"
+/>
+
+<style>
+
+.title {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 30px;
+    font-weight: 700;
+    fill: #111111;
+}
+
+.label {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 14px;
+    fill: #666666;
+}
+
+.value {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 34px;
+    font-weight: 700;
+    fill: #111111;
+}
+
+.mono {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 15px;
+    fill: #111111;
+}
+
+.small {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 13px;
+    fill: #666666;
+}
+
+</style>
+
+
+<text
+    x="50"
+    y="65"
+    class="title">
+    GITHUB / RIxiV1
+</text>
+
+
+<line
+    x1="50"
+    y1="90"
+    x2="850"
+    y2="90"
+    stroke="#d8d8d8"
+/>
+
+
+<!-- REPOSITORIES -->
+
+<text
+    x="50"
+    y="135"
+    class="label">
+    PUBLIC REPOSITORIES
+</text>
+
+<text
+    x="50"
+    y="175"
+    class="value">
+    11
+</text>
+
+
+<!-- STARS -->
+
+<text
+    x="300"
+    y="135"
+    class="label">
+    STARS
+</text>
+
+<text
+    x="300"
+    y="175"
+    class="value">
+    3
+</text>
+
+
+<!-- FOLLOWERS -->
+
+<text
+    x="500"
+    y="135"
+    class="label">
+    FOLLOWERS
+</text>
+
+<text
+    x="500"
+    y="175"
+    class="value">
+    8
+</text>
+
+
+<!-- FOLLOWING -->
+
+<text
+    x="700"
+    y="135"
+    class="label">
+    FOLLOWING
+</text>
+
+<text
+    x="700"
+    y="175"
+    class="value">
+    11
+</text>
+
+
+<line
+    x1="50"
+    y1="220"
+    x2="850"
+    y2="220"
+    stroke="#d8d8d8"
+/>
+
+
+<!-- LANGUAGES -->
+
+<text
+    x="50"
+    y="260"
+    class="label">
+    LANGUAGES
+</text>
+
+<text
+    x="50"
+    y="300"
+    class="mono">TypeScript      ██████████            50.0%</text>
+
+<text
+    x="50"
+    y="330"
+    class="mono">Python          ██████                30.0%</text>
+
+<text
+    x="50"
+    y="360"
+    class="mono">JavaScript      ████                  20.0%</text>
+
+<text
+    x="500"
+    y="260"
+    class="label">
+    PROJECTS
+</text>
+
+<text
+    x="500"
+    y="300"
+    class="mono">RIxiV1</text>
+
+<text
+    x="500"
+    y="318"
+    class="small">About me</text>
+
+<text
+    x="500"
+    y="355"
+    class="mono">shadowscan</text>
+
+<text
+    x="500"
+    y="373"
+    class="small">AI Governance &amp; Shadow AI Detection Platform </text>
+
+<text
+    x="500"
+    y="410"
+    class="mono">portfolio</text>
+
+<text
+    x="500"
+    y="428"
+    class="small">My personal portfolio — Next.js 16 + TypeScri</text>
+
+<text
+    x="500"
+    y="465"
+    class="mono">DIGITAL-CLINIC</text>
+
+<text
+    x="500"
+    y="483"
+    class="small">Turns lab reports into plain English, in the </text>
+
+<text
+    x="500"
+    y="520"
+    class="mono">InfoBlend</text>
+
+<text
+    x="500"
+    y="538"
+    class="small">InfoBlend  is a Manifest V3 Chrome extension </text>
+
+</svg>

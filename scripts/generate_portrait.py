@@ -42,15 +42,18 @@ img = np.array(image)
 
 print("Converting to grayscale...")
 
-gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
+gray = cv2.cvtColor(
+    img,
+    cv2.COLOR_RGB2GRAY
+)
 
 
 # ---------------------------------------------------------
 # LIGHT SMOOTHING
 # ---------------------------------------------------------
 
-# Don't use CLAHE here.
 # Comic artwork already has strong contrast.
+# Keep smoothing light so facial details survive.
 
 gray = cv2.GaussianBlur(
     gray,
@@ -82,7 +85,10 @@ normalized = gray.astype(np.float32) / 255.0
 
 gamma = 0.72
 
-adjusted = np.power(normalized, gamma)
+adjusted = np.power(
+    normalized,
+    gamma
+)
 
 gray = np.clip(
     adjusted * 255,
@@ -99,7 +105,11 @@ height, width = gray.shape
 
 rows = max(
     1,
-    round(COLS * (height / width) * 0.48)
+    round(
+        COLS
+        * (height / width)
+        * 0.48
+    )
 )
 
 print(
@@ -126,12 +136,17 @@ for row in gray:
     for value in row:
 
         index = int(
-            value / 255 * (len(RAMP) - 1)
+            value
+            / 255
+            * (len(RAMP) - 1)
         )
 
         index = max(
             0,
-            min(len(RAMP) - 1, index)
+            min(
+                len(RAMP) - 1,
+                index
+            )
         )
 
         line += RAMP[index]
@@ -159,14 +174,25 @@ viewBox="0 0 {svg_width:.0f} {svg_height:.0f}">
 '''
 )
 
-# White background
-parts.append(
-    '<rect width="100%" height="100%" fill="white"/>'
-)
+# ---------------------------------------------------------
+# IMPORTANT
+# ---------------------------------------------------------
+#
+# No background rectangle.
+#
+# The SVG is transparent so GitHub's dark background
+# shows through naturally.
+#
+# ASCII characters are light to match GitHub's dark theme.
+# ---------------------------------------------------------
 
 for i, line in enumerate(ascii_rows):
 
-    y = FONT_SIZE * (i + 1) * LINE_HEIGHT
+    y = (
+        FONT_SIZE
+        * (i + 1)
+        * LINE_HEIGHT
+    )
 
     safe_line = html.escape(line)
 
@@ -198,12 +224,21 @@ for i, line in enumerate(ascii_rows):
     clip-path="url(#{clip_id})"
     font-family="monospace"
     font-size="{FONT_SIZE}px"
-    fill="black">{safe_line}</text>
+    fill="#f0f6fc">{safe_line}</text>
 '''
     )
 
+
+# ---------------------------------------------------------
+# CLOSE SVG
+# ---------------------------------------------------------
+
 parts.append("</svg>")
 
+
+# ---------------------------------------------------------
+# WRITE
+# ---------------------------------------------------------
 
 OUTPUT.write_text(
     "\n".join(parts),
@@ -214,3 +249,5 @@ print()
 print("DONE!")
 print(f"Created: {OUTPUT}")
 print(f"Size: {COLS} columns x {rows} rows")
+print("Background: transparent")
+print("ASCII color: #f0f6fc")

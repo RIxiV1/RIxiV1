@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./portrait.svg" width="520" alt="Suhaib ASCII portrait">
+<img src="./portrait.svg" width="560" alt="Suhaib ASCII portrait">
 
 <br>
 
@@ -16,51 +16,86 @@
 
 </div>
 
----
+<br>
 
-## about
+<h2>about</h2>
 
-**Suhaib** — BTech IT student and software engineer.
+<p>
+<b>Suhaib</b> — BTech IT student and software engineer.
+</p>
 
+<p>
 I like building things, breaking things, and occasionally making them work.
+</p>
 
+<p>
 Currently interested in:
+</p>
 
-- Full-stack development
-- AI / ML
-- Developer tools
-- Product engineering
+<ul>
+<li>Full-stack development</li>
+<li>AI / ML</li>
+<li>Developer tools</li>
+<li>Product engineering</li>
+</ul>
 
+<p>
 When I'm not coding, I'm probably gaming.
+</p>
 
----
+<hr>
 
-## projects
+<h2>projects</h2>
 
-### [shadowscan](https://github.com/RIxiV1)
+<h3>
+<a href="https://github.com/RIxiV1">shadowscan</a>
+</h3>
 
-**AI Governance & Shadow AI Detection Platform**
+<p>
+<b>AI Governance & Shadow AI Detection Platform</b>
+</p>
 
+<p>
 Detecting unauthorized AI usage and helping organizations understand the risks behind it.
+</p>
 
-### [portfolio](https://github.com/RIxiV1)
+<h3>
+<a href="https://github.com/RIxiV1">portfolio</a>
+</h3>
 
-**Personal portfolio**
+<p>
+<b>Personal portfolio</b>
+</p>
 
+<p>
 Next.js + TypeScript. Making the boring parts of a portfolio less boring.
+</p>
 
-### [DIGITAL-CLINIC](https://github.com/RIxiV1)
+<h3>
+<a href="https://github.com/RIxiV1">DIGITAL-CLINIC</a>
+</h3>
 
-**Lab report explainer**
+<p>
+<b>Lab report explainer</b>
+</p>
 
+<p>
 Turns complicated lab reports into plain English.
+</p>
 
-### InfoBlend
+<h3>InfoBlend</h3>
 
+<p>
 An experiment in building useful software around information.
+</p>
 
----
+<hr>
 
-## stack
+<h2>stack</h2>
 
-`TypeScript` `Python` `JavaScript` `SQL`
+<p>
+<code>TypeScript</code>
+<code>Python</code>
+<code>JavaScript</code>
+<code>SQL</code>
+</p>
