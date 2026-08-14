@@ -8,17 +8,11 @@
 
 <br><br>
 
-<a href="https://github.com/RIxiV1">
-  GitHub
-</a>
+<a href="https://github.com/RIxiV1">GitHub</a>
 &nbsp;&nbsp;·&nbsp;&nbsp;
-<a href="https://www.linkedin.com/in/shaiksuhaib">
-  LinkedIn
-</a>
+<a href="https://www.linkedin.com/in/shaiksuhaib">LinkedIn</a>
 &nbsp;&nbsp;·&nbsp;&nbsp;
-<a href="mailto:shaiksuhaib360@gmail.com">
-  Email
-</a>
+<a href="mailto:shaiksuhaib360@gmail.com">Email</a>
 
 </div>
 
@@ -69,5 +63,4 @@ An experiment in building useful software around information.
 
 ## stack
 
-```text
-TypeScript    Python    JavaScript    SQL
+`TypeScript` `Python` `JavaScript` `SQL`
