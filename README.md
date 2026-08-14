@@ -1,23 +1,73 @@
-# Ay, what's good! <img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3NjF4Y2dzMzhzZDlhaGtyeGhweWQweGgxamV0YXBuYXlsdG02NzRqayZlcD12MV9naWZzX3NlYXJjaCZjdD1n/nhFdRPpcTlIffGfErQ/giphy.gif" width="35px">
+<div align="center">
 
-I'm Suhaib, a Software engineer.
-
-Currently grinding through my Btech in IT.
-
-When I'm free, I be gaming mostly. 🤝
-
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/RIxiV1)
-[![LinkedIn](https://img.shields.io/badge/LINKEDIN-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/shaiksuhaib)
-[![Gmail](https://img.shields.io/badge/GMAIL-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:shaiksuhaib360@gmail.com)
+<img src="./portrait.svg" width="520" alt="Suhaib ASCII portrait">
 
 <br>
 
-<img src="./portrait.svg" alt="ASCII Spider-Man">
+<img src="./contributions.svg" width="100%" alt="GitHub contribution activity">
 
-<br>
+<br><br>
+
+<a href="https://github.com/RIxiV1">
+  GitHub
+</a>
+&nbsp;&nbsp;·&nbsp;&nbsp;
+<a href="https://www.linkedin.com/in/shaiksuhaib">
+  LinkedIn
+</a>
+&nbsp;&nbsp;·&nbsp;&nbsp;
+<a href="mailto:shaiksuhaib360@gmail.com">
+  Email
+</a>
+
+</div>
 
 ---
 
-### `currently`
+## about
 
-`building` · `coding` · `gaming`
+**Suhaib** — BTech IT student and software engineer.
+
+I like building things, breaking things, and occasionally making them work.
+
+Currently interested in:
+
+- Full-stack development
+- AI / ML
+- Developer tools
+- Product engineering
+
+When I'm not coding, I'm probably gaming.
+
+---
+
+## projects
+
+### [shadowscan](https://github.com/RIxiV1)
+
+**AI Governance & Shadow AI Detection Platform**
+
+Detecting unauthorized AI usage and helping organizations understand the risks behind it.
+
+### [portfolio](https://github.com/RIxiV1)
+
+**Personal portfolio**
+
+Next.js + TypeScript. Making the boring parts of a portfolio less boring.
+
+### [DIGITAL-CLINIC](https://github.com/RIxiV1)
+
+**Lab report explainer**
+
+Turns complicated lab reports into plain English.
+
+### InfoBlend
+
+An experiment in building useful software around information.
+
+---
+
+## stack
+
+```text
+TypeScript    Python    JavaScript    SQL
