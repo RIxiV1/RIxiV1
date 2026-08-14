@@ -22,7 +22,7 @@
 
 <blockquote>
 <p>
-BTech IT student and software engineer.
+ IT student based in India.
 <br>
 I like building useful software and figuring out how things work.
 </p>
@@ -35,7 +35,7 @@ AI/ML, and product engineering.
 </p>
 
 <p>
-When I'm not coding, I'm probably gaming.
+ And I'm probably gaming.
 </p>
 
 <h2>stack</h2>
