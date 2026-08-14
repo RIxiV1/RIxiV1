@@ -29,15 +29,9 @@ I like building things, breaking things, and occasionally making them work.
 </p>
 
 <p>
-Currently interested in:
+Currently interested in full-stack development, AI / ML, developer tools,
+and product engineering.
 </p>
-
-<ul>
-<li>Full-stack development</li>
-<li>AI / ML</li>
-<li>Developer tools</li>
-<li>Product engineering</li>
-</ul>
 
 <p>
 When I'm not coding, I'm probably gaming.
@@ -196,4 +190,6 @@ A privacy-conscious subscription tracker focused on making recurring expenses ea
 <code>Next.js</code>
 <code>Node.js</code>
 <code>SQL</code>
+<code>Git</code>
+<code>Linux</code>
 </p>
