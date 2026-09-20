@@ -6,7 +6,9 @@ from datetime import date, timedelta
 
 
 USERNAME = "RIxiV1"
-OUTPUT = Path("../contributions.json")
+
+ROOT = Path(__file__).resolve().parent.parent
+OUTPUT = ROOT / "contributions.json"
 
 GRAPHQL_URL = "https://api.github.com/graphql"
 
@@ -14,12 +16,16 @@ GRAPHQL_URL = "https://api.github.com/graphql"
 QUERY = """
 query($login: String!) {
   user(login: $login) {
+    login
+
     contributionsCollection {
       contributionCalendar {
         totalContributions
         colors
+
         weeks {
           firstDay
+
           contributionDays {
             date
             contributionCount
@@ -46,13 +52,10 @@ query($login: String!) {
 
 
 def graphql_request():
-
     token = os.environ.get("GITHUB_TOKEN")
 
     if not token:
-        raise RuntimeError(
-            "GITHUB_TOKEN is not set."
-        )
+        raise RuntimeError("GITHUB_TOKEN is not set.")
 
     payload = json.dumps({
         "query": QUERY,
@@ -70,10 +73,10 @@ def graphql_request():
             "Accept": "application/json",
             "User-Agent": "RIxiV1-profile-generator",
         },
-        method="POST"
+        method="POST",
     )
 
-    with urllib.request.urlopen(request) as response:
+    with urllib.request.urlopen(request, timeout=30) as response:
         return json.loads(
             response.read().decode("utf-8")
         )
@@ -86,21 +89,18 @@ result = graphql_request()
 
 if "errors" in result:
     print(json.dumps(result["errors"], indent=2))
-    raise RuntimeError(
-        "GitHub GraphQL request failed."
-    )
+    raise RuntimeError("GitHub GraphQL request failed.")
 
 
 user = result["data"]["user"]
 
 if not user:
     raise RuntimeError(
-        f"GitHub user {USERNAME} was not found."
+        f"GitHub user '{USERNAME}' was not found."
     )
 
 
 collection = user["contributionsCollection"]
-
 calendar = collection["contributionCalendar"]
 
 
@@ -111,9 +111,7 @@ calendar = collection["contributionCalendar"]
 days = []
 
 for week in calendar["weeks"]:
-
     for day in week["contributionDays"]:
-
         days.append({
             "date": day["date"],
             "count": day["contributionCount"],
@@ -123,71 +121,54 @@ for week in calendar["weeks"]:
         })
 
 
-# ---------------------------------------------------------
-# SORT
-# ---------------------------------------------------------
-
-days.sort(
-    key=lambda x: x["date"]
-)
+days.sort(key=lambda x: x["date"])
 
 
 # ---------------------------------------------------------
-# STREAK CALCULATION
+# STREAK CALCULATIONS
 # ---------------------------------------------------------
 
-contribution_dates = {
-    d["date"]
-    for d in days
-    if d["count"] > 0
+available_dates = {
+    date.fromisoformat(day["date"])
+    for day in days
+    if day["count"] > 0
 }
 
 
-def calculate_longest_streak():
-
-    longest = 0
-    current = 0
-
-    for day in days:
-
-        if day["count"] > 0:
-            current += 1
-            longest = max(
-                longest,
-                current
-            )
-        else:
-            current = 0
-
-    return longest
-
-
 def calculate_current_streak():
+    if not available_dates:
+        return 0
 
     today = date.today()
 
-    available = {
-        date.fromisoformat(d["date"])
-        for d in days
-        if d["count"] > 0
-    }
-
-    # If there was no contribution today,
-    # start checking from yesterday.
     current_day = today
 
-    if current_day not in available:
+    # If there was no contribution today,
+    # start from yesterday.
+    if current_day not in available_dates:
         current_day -= timedelta(days=1)
 
     streak = 0
 
-    while current_day in available:
-
+    while current_day in available_dates:
         streak += 1
-
         current_day -= timedelta(days=1)
 
     return streak
+
+
+def calculate_longest_streak():
+    longest = 0
+    current = 0
+
+    for day in days:
+        if day["count"] > 0:
+            current += 1
+            longest = max(longest, current)
+        else:
+            current = 0
+
+    return longest
 
 
 # ---------------------------------------------------------
@@ -202,7 +183,7 @@ active_days = sum(
 
 
 # ---------------------------------------------------------
-# TOTALS
+# STATS
 # ---------------------------------------------------------
 
 stats = {
@@ -247,6 +228,11 @@ stats = {
         collection[
             "totalRepositoriesWithContributedPullRequests"
         ],
+
+    "repositories_with_reviews":
+        collection[
+            "totalRepositoriesWithContributedPullRequestReviews"
+        ],
 }
 
 
@@ -256,8 +242,11 @@ stats = {
 
 output = {
     "username": USERNAME,
+
     "stats": stats,
+
     "colors": calendar["colors"],
+
     "days": days,
 }
 
@@ -272,41 +261,16 @@ OUTPUT.write_text(
 
 
 print()
-print("DONE!")
-print(
-    f"Total contributions: "
-    f"{stats['total_contributions']}"
-)
-
-print(
-    f"Active days: "
-    f"{stats['active_days']}"
-)
-
-print(
-    f"Current streak: "
-    f"{stats['current_streak']}"
-)
-
-print(
-    f"Longest streak: "
-    f"{stats['longest_streak']}"
-)
-
-print(
-    f"Commits: "
-    f"{stats['total_commits']}"
-)
-
-print(
-    f"Pull requests: "
-    f"{stats['total_pull_requests']}"
-)
-
-print(
-    f"Issues: "
-    f"{stats['total_issues']}"
-)
-
+print("========================================")
+print(" GitHub contribution data updated")
+print("========================================")
+print(f"Total contributions : {stats['total_contributions']}")
+print(f"Active days         : {stats['active_days']}")
+print(f"Current streak      : {stats['current_streak']}")
+print(f"Longest streak      : {stats['longest_streak']}")
+print(f"Commits             : {stats['total_commits']}")
+print(f"Pull requests       : {stats['total_pull_requests']}")
+print(f"Issues              : {stats['total_issues']}")
+print(f"Reviews             : {stats['total_reviews']}")
 print()
 print(f"Created: {OUTPUT}")
