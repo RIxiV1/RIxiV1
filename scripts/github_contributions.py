@@ -1,276 +1,423 @@
-import os
-import json
-import urllib.request
 from pathlib import Path
-from datetime import date, timedelta
+import json
+import html
+from datetime import date
 
 
-USERNAME = "RIxiV1"
+# ---------------------------------------------------------
+# PATHS
+# ---------------------------------------------------------
 
 ROOT = Path(__file__).resolve().parent.parent
-OUTPUT = ROOT / "contributions.json"
 
-GRAPHQL_URL = "https://api.github.com/graphql"
-
-
-QUERY = """
-query($login: String!) {
-  user(login: $login) {
-    login
-
-    contributionsCollection {
-      contributionCalendar {
-        totalContributions
-        colors
-
-        weeks {
-          firstDay
-
-          contributionDays {
-            date
-            contributionCount
-            contributionLevel
-            weekday
-            color
-          }
-        }
-      }
-
-      totalCommitContributions
-      totalIssueContributions
-      totalPullRequestContributions
-      totalPullRequestReviewContributions
-      totalRepositoryContributions
-      totalRepositoriesWithContributedCommits
-      totalRepositoriesWithContributedIssues
-      totalRepositoriesWithContributedPullRequests
-      totalRepositoriesWithContributedPullRequestReviews
-    }
-  }
-}
-"""
+DATA = ROOT / "contributions.json"
+OUTPUT = ROOT / "contributions.svg"
 
 
-def graphql_request():
-    token = os.environ.get("GITHUB_TOKEN")
+# ---------------------------------------------------------
+# LOAD DATA
+# ---------------------------------------------------------
 
-    if not token:
-        raise RuntimeError("GITHUB_TOKEN is not set.")
-
-    payload = json.dumps({
-        "query": QUERY,
-        "variables": {
-            "login": USERNAME
-        }
-    }).encode("utf-8")
-
-    request = urllib.request.Request(
-        GRAPHQL_URL,
-        data=payload,
-        headers={
-            "Authorization": f"Bearer {token}",
-            "Content-Type": "application/json",
-            "Accept": "application/json",
-            "User-Agent": "RIxiV1-profile-generator",
-        },
-        method="POST",
+if not DATA.exists():
+    raise FileNotFoundError(
+        f"Could not find {DATA}"
     )
 
-    with urllib.request.urlopen(request, timeout=30) as response:
-        return json.loads(
-            response.read().decode("utf-8")
+
+data = json.loads(
+    DATA.read_text(encoding="utf-8")
+)
+
+
+stats = data["stats"]
+days = data["days"]
+
+USERNAME = data["username"]
+
+
+# ---------------------------------------------------------
+# SETTINGS
+# ---------------------------------------------------------
+
+WIDTH = 1200
+HEIGHT = 430
+
+BG = "#0d1117"
+TEXT = "#f0f6fc"
+MUTED = "#8b949e"
+LINE = "#c9d1d9"
+FILL = "#21262d"
+
+RIGHT_X = WIDTH - 55
+
+
+# ---------------------------------------------------------
+# HELPERS
+# ---------------------------------------------------------
+
+def esc(value):
+    return html.escape(str(value))
+
+
+def text(
+    x,
+    y,
+    content,
+    size=16,
+    weight=400,
+    color=TEXT,
+    anchor="start",
+):
+    return (
+        f'<text x="{x}" y="{y}" '
+        f'font-family="ui-monospace, SFMono-Regular, Menlo, '
+        f'Monaco, Consolas, monospace" '
+        f'font-size="{size}px" '
+        f'font-weight="{weight}" '
+        f'fill="{color}" '
+        f'text-anchor="{anchor}">'
+        f'{esc(content)}</text>'
+    )
+
+
+# ---------------------------------------------------------
+# NORMALIZE DAYS
+# ---------------------------------------------------------
+
+daily = []
+
+for item in days:
+    daily.append({
+        "date": date.fromisoformat(item["date"]),
+        "count": int(item["count"]),
+        "weekday": int(item["weekday"]),
+    })
+
+
+daily.sort(key=lambda item: item["date"])
+
+
+# ---------------------------------------------------------
+# WEEKLY DATA
+# ---------------------------------------------------------
+
+weekly = []
+current_week = 0
+
+for item in daily:
+
+    # GitHub's contribution calendar uses:
+    # 0 = Sunday
+    # 1 = Monday
+    # ...
+    # 6 = Saturday
+
+    if item["weekday"] == 0 and current_week:
+        weekly.append(current_week)
+        current_week = 0
+
+    current_week += item["count"]
+
+
+if current_week:
+    weekly.append(current_week)
+
+
+# Keep approximately one year.
+weekly = weekly[-53:]
+
+
+# ---------------------------------------------------------
+# BEST WEEK
+# ---------------------------------------------------------
+
+best_week = max(weekly) if weekly else 0
+
+
+# ---------------------------------------------------------
+# GRAPH GEOMETRY
+# ---------------------------------------------------------
+
+GRAPH_LEFT = 55
+GRAPH_RIGHT = WIDTH - 55
+
+GRAPH_TOP = 165
+GRAPH_BOTTOM = 325
+
+graph_width = GRAPH_RIGHT - GRAPH_LEFT
+graph_height = GRAPH_BOTTOM - GRAPH_TOP
+
+max_value = max(weekly) if weekly else 1
+
+max_value = max(max_value, 1)
+
+
+points = []
+
+
+for index, value in enumerate(weekly):
+
+    if len(weekly) == 1:
+        x = GRAPH_LEFT
+    else:
+        x = (
+            GRAPH_LEFT
+            + (
+                index
+                / (len(weekly) - 1)
+            )
+            * graph_width
         )
 
+    normalized = value / max_value
 
-print(f"Fetching contribution data for {USERNAME}...")
-
-result = graphql_request()
-
-
-if "errors" in result:
-    print(json.dumps(result["errors"], indent=2))
-    raise RuntimeError("GitHub GraphQL request failed.")
-
-
-user = result["data"]["user"]
-
-if not user:
-    raise RuntimeError(
-        f"GitHub user '{USERNAME}' was not found."
+    y = (
+        GRAPH_BOTTOM
+        - normalized * graph_height
     )
 
-
-collection = user["contributionsCollection"]
-calendar = collection["contributionCalendar"]
+    points.append((x, y))
 
 
 # ---------------------------------------------------------
-# FLATTEN CONTRIBUTION DAYS
+# SMOOTH PATH
 # ---------------------------------------------------------
 
-days = []
+def smooth_path(points):
 
-for week in calendar["weeks"]:
-    for day in week["contributionDays"]:
-        days.append({
-            "date": day["date"],
-            "count": day["contributionCount"],
-            "level": day["contributionLevel"],
-            "weekday": day["weekday"],
-            "color": day["color"],
-        })
+    if not points:
+        return ""
 
+    if len(points) == 1:
+        x, y = points[0]
+        return f"M {x} {y}"
 
-days.sort(key=lambda x: x["date"])
+    path = (
+        f"M {points[0][0]} "
+        f"{points[0][1]}"
+    )
 
+    for index in range(1, len(points)):
 
-# ---------------------------------------------------------
-# STREAK CALCULATIONS
-# ---------------------------------------------------------
+        x0, y0 = points[index - 1]
+        x1, y1 = points[index]
 
-available_dates = {
-    date.fromisoformat(day["date"])
-    for day in days
-    if day["count"] > 0
-}
+        midpoint = (x0 + x1) / 2
 
+        path += (
+            f" C {midpoint} {y0}, "
+            f"{midpoint} {y1}, "
+            f"{x1} {y1}"
+        )
 
-def calculate_current_streak():
-    if not available_dates:
-        return 0
-
-    today = date.today()
-
-    current_day = today
-
-    # If there was no contribution today,
-    # start from yesterday.
-    if current_day not in available_dates:
-        current_day -= timedelta(days=1)
-
-    streak = 0
-
-    while current_day in available_dates:
-        streak += 1
-        current_day -= timedelta(days=1)
-
-    return streak
+    return path
 
 
-def calculate_longest_streak():
-    longest = 0
-    current = 0
-
-    for day in days:
-        if day["count"] > 0:
-            current += 1
-            longest = max(longest, current)
-        else:
-            current = 0
-
-    return longest
+line_path = smooth_path(points)
 
 
 # ---------------------------------------------------------
-# ACTIVE DAYS
+# FILLED AREA
 # ---------------------------------------------------------
 
-active_days = sum(
-    1
-    for day in days
-    if day["count"] > 0
+if points:
+
+    fill_path = (
+        line_path
+        + f" L {points[-1][0]} {GRAPH_BOTTOM}"
+        + f" L {points[0][0]} {GRAPH_BOTTOM}"
+        + " Z"
+    )
+
+else:
+    fill_path = ""
+
+
+# ---------------------------------------------------------
+# SVG START
+# ---------------------------------------------------------
+
+svg = f'''<svg
+xmlns="http://www.w3.org/2000/svg"
+width="{WIDTH}"
+height="{HEIGHT}"
+viewBox="0 0 {WIDTH} {HEIGHT}">
+
+<rect
+    width="{WIDTH}"
+    height="{HEIGHT}"
+    fill="{BG}"
+/>
+'''
+
+
+# ---------------------------------------------------------
+# TOTAL CONTRIBUTIONS
+# ---------------------------------------------------------
+
+svg += text(
+    55,
+    48,
+    f"{stats['total_contributions']:,}",
+    30,
+    700,
+    TEXT,
+)
+
+svg += text(
+    55,
+    72,
+    "contributions in the last year",
+    12,
+    400,
+    MUTED,
 )
 
 
 # ---------------------------------------------------------
-# STATS
+# RIGHT STATS
 # ---------------------------------------------------------
 
-stats = {
-    "total_contributions":
-        calendar["totalContributions"],
+svg += text(
+    RIGHT_X,
+    48,
+    f"{stats['active_days']:,}",
+    22,
+    700,
+    TEXT,
+    "end",
+)
 
-    "active_days":
-        active_days,
+svg += text(
+    RIGHT_X,
+    72,
+    "active days",
+    12,
+    400,
+    MUTED,
+    "end",
+)
 
-    "current_streak":
-        calculate_current_streak(),
+svg += text(
+    RIGHT_X,
+    105,
+    f"{best_week:,}",
+    22,
+    700,
+    TEXT,
+    "end",
+)
 
-    "longest_streak":
-        calculate_longest_streak(),
-
-    "total_commits":
-        collection["totalCommitContributions"],
-
-    "total_issues":
-        collection["totalIssueContributions"],
-
-    "total_pull_requests":
-        collection["totalPullRequestContributions"],
-
-    "total_reviews":
-        collection["totalPullRequestReviewContributions"],
-
-    "repositories_created":
-        collection["totalRepositoryContributions"],
-
-    "repositories_with_commits":
-        collection[
-            "totalRepositoriesWithContributedCommits"
-        ],
-
-    "repositories_with_issues":
-        collection[
-            "totalRepositoriesWithContributedIssues"
-        ],
-
-    "repositories_with_pull_requests":
-        collection[
-            "totalRepositoriesWithContributedPullRequests"
-        ],
-
-    "repositories_with_reviews":
-        collection[
-            "totalRepositoriesWithContributedPullRequestReviews"
-        ],
-}
+svg += text(
+    RIGHT_X,
+    129,
+    "best week",
+    12,
+    400,
+    MUTED,
+    "end",
+)
 
 
 # ---------------------------------------------------------
-# OUTPUT
+# GRAPH
 # ---------------------------------------------------------
 
-output = {
-    "username": USERNAME,
+if line_path:
 
-    "stats": stats,
+    # Area
+    svg += f'''
+<path
+    d="{fill_path}"
+    fill="{FILL}"
+    opacity="0.9"
+/>
+'''
 
-    "colors": calendar["colors"],
+    # Line
+    svg += f'''
+<path
+    d="{line_path}"
+    fill="none"
+    stroke="{LINE}"
+    stroke-width="3"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+/>
+'''
 
-    "days": days,
-}
+    # Endpoint
+    last_x, last_y = points[-1]
 
+    svg += f'''
+<circle
+    cx="{last_x}"
+    cy="{last_y}"
+    r="5"
+    fill="{LINE}"
+/>
+'''
+
+
+# ---------------------------------------------------------
+# FOOTER
+# ---------------------------------------------------------
+
+current_year = date.today().year
+
+svg += text(
+    55,
+    385,
+    "generated from GitHub contribution data",
+    11,
+    400,
+    MUTED,
+)
+
+svg += text(
+    RIGHT_X,
+    355,
+    str(current_year),
+    12,
+    400,
+    MUTED,
+    "end",
+)
+
+svg += text(
+    RIGHT_X,
+    385,
+    USERNAME,
+    12,
+    500,
+    MUTED,
+    "end",
+)
+
+
+# ---------------------------------------------------------
+# CLOSE SVG
+# ---------------------------------------------------------
+
+svg += "</svg>"
+
+
+# ---------------------------------------------------------
+# WRITE
+# ---------------------------------------------------------
 
 OUTPUT.write_text(
-    json.dumps(
-        output,
-        indent=2
-    ),
+    svg,
     encoding="utf-8"
 )
 
 
 print()
 print("========================================")
-print(" GitHub contribution data updated")
+print(" Contribution SVG generated")
 print("========================================")
-print(f"Total contributions : {stats['total_contributions']}")
-print(f"Active days         : {stats['active_days']}")
-print(f"Current streak      : {stats['current_streak']}")
-print(f"Longest streak      : {stats['longest_streak']}")
-print(f"Commits             : {stats['total_commits']}")
-print(f"Pull requests       : {stats['total_pull_requests']}")
-print(f"Issues              : {stats['total_issues']}")
-print(f"Reviews             : {stats['total_reviews']}")
-print()
-print(f"Created: {OUTPUT}")
+print(f"Created   : {OUTPUT}")
+print(f"Size      : {WIDTH} x {HEIGHT}")
+print(f"Total     : {stats['total_contributions']}")
+print(f"Active    : {stats['active_days']}")
+print(f"Best week : {best_week}")
