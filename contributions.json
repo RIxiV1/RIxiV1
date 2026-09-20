@@ -1,18 +1,19 @@
 {
   "username": "RIxiV1",
   "stats": {
-    "total_contributions": 2139,
+    "total_contributions": 2179,
     "active_days": 120,
     "current_streak": 1,
     "longest_streak": 18,
-    "total_commits": 2013,
+    "total_commits": 2053,
     "total_issues": 0,
     "total_pull_requests": 105,
     "total_reviews": 4,
     "repositories_created": 9,
     "repositories_with_commits": 11,
     "repositories_with_issues": 0,
-    "repositories_with_pull_requests": 5
+    "repositories_with_pull_requests": 5,
+    "restricted_contributions": 7
   },
   "colors": [
     "#9be9a8",
@@ -21,300 +22,6 @@
     "#216e39"
   ],
   "days": [
-    {
-      "date": "2025-08-10",
-      "count": 0,
-      "level": "NONE",
-      "weekday": 0,
-      "color": "#ebedf0"
-    },
-    {
-      "date": "2025-08-11",
-      "count": 0,
-      "level": "NONE",
-      "weekday": 1,
-      "color": "#ebedf0"
-    },
-    {
-      "date": "2025-08-12",
-      "count": 0,
-      "level": "NONE",
-      "weekday": 2,
-      "color": "#ebedf0"
-    },
-    {
-      "date": "2025-08-13",
-      "count": 0,
-      "level": "NONE",
-      "weekday": 3,
-      "color": "#ebedf0"
-    },
-    {
-      "date": "2025-08-14",
-      "count": 0,
-      "level": "NONE",
-      "weekday": 4,
-      "color": "#ebedf0"
-    },
-    {
-      "date": "2025-08-15",
-      "count": 0,
-      "level": "NONE",
-      "weekday": 5,
-      "color": "#ebedf0"
-    },
-    {
-      "date": "2025-08-16",
-      "count": 0,
-      "level": "NONE",
-      "weekday": 6,
-      "color": "#ebedf0"
-    },
-    {
-      "date": "2025-08-17",
-      "count": 0,
-      "level": "NONE",
-      "weekday": 0,
-      "color": "#ebedf0"
-    },
-    {
-      "date": "2025-08-18",
-      "count": 0,
-      "level": "NONE",
-      "weekday": 1,
-      "color": "#ebedf0"
-    },
-    {
-      "date": "2025-08-19",
-      "count": 0,
-      "level": "NONE",
-      "weekday": 2,
-      "color": "#ebedf0"
-    },
-    {
-      "date": "2025-08-20",
-      "count": 0,
-      "level": "NONE",
-      "weekday": 3,
-      "color": "#ebedf0"
-    },
-    {
-      "date": "2025-08-21",
-      "count": 0,
-      "level": "NONE",
-      "weekday": 4,
-      "color": "#ebedf0"
-    },
-    {
-      "date": "2025-08-22",
-      "count": 0,
-      "level": "NONE",
-      "weekday": 5,
-      "color": "#ebedf0"
-    },
-    {
-      "date": "2025-08-23",
-      "count": 0,
-      "level": "NONE",
-      "weekday": 6,
-      "color": "#ebedf0"
-    },
-    {
-      "date": "2025-08-24",
-      "count": 0,
-      "level": "NONE",
-      "weekday": 0,
-      "color": "#ebedf0"
-    },
-    {
-      "date": "2025-08-25",
-      "count": 0,
-      "level": "NONE",
-      "weekday": 1,
-      "color": "#ebedf0"
-    },
-    {
-      "date": "2025-08-26",
-      "count": 0,
-      "level": "NONE",
-      "weekday": 2,
-      "color": "#ebedf0"
-    },
-    {
-      "date": "2025-08-27",
-      "count": 0,
-      "level": "NONE",
-      "weekday": 3,
-      "color": "#ebedf0"
-    },
-    {
-      "date": "2025-08-28",
-      "count": 0,
-      "level": "NONE",
-      "weekday": 4,
-      "color": "#ebedf0"
-    },
-    {
-      "date": "2025-08-29",
-      "count": 0,
-      "level": "NONE",
-      "weekday": 5,
-      "color": "#ebedf0"
-    },
-    {
-      "date": "2025-08-30",
-      "count": 0,
-      "level": "NONE",
-      "weekday": 6,
-      "color": "#ebedf0"
-    },
-    {
-      "date": "2025-08-31",
-      "count": 0,
-      "level": "NONE",
-      "weekday": 0,
-      "color": "#ebedf0"
-    },
-    {
-      "date": "2025-09-01",
-      "count": 0,
-      "level": "NONE",
-      "weekday": 1,
-      "color": "#ebedf0"
-    },
-    {
-      "date": "2025-09-02",
-      "count": 0,
-      "level": "NONE",
-      "weekday": 2,
-      "color": "#ebedf0"
-    },
-    {
-      "date": "2025-09-03",
-      "count": 0,
-      "level": "NONE",
-      "weekday": 3,
-      "color": "#ebedf0"
-    },
-    {
-      "date": "2025-09-04",
-      "count": 0,
-      "level": "NONE",
-      "weekday": 4,
-      "color": "#ebedf0"
-    },
-    {
-      "date": "2025-09-05",
-      "count": 0,
-      "level": "NONE",
-      "weekday": 5,
-      "color": "#ebedf0"
-    },
-    {
-      "date": "2025-09-06",
-      "count": 0,
-      "level": "NONE",
-      "weekday": 6,
-      "color": "#ebedf0"
-    },
-    {
-      "date": "2025-09-07",
-      "count": 0,
-      "level": "NONE",
-      "weekday": 0,
-      "color": "#ebedf0"
-    },
-    {
-      "date": "2025-09-08",
-      "count": 0,
-      "level": "NONE",
-      "weekday": 1,
-      "color": "#ebedf0"
-    },
-    {
-      "date": "2025-09-09",
-      "count": 0,
-      "level": "NONE",
-      "weekday": 2,
-      "color": "#ebedf0"
-    },
-    {
-      "date": "2025-09-10",
-      "count": 0,
-      "level": "NONE",
-      "weekday": 3,
-      "color": "#ebedf0"
-    },
-    {
-      "date": "2025-09-11",
-      "count": 0,
-      "level": "NONE",
-      "weekday": 4,
-      "color": "#ebedf0"
-    },
-    {
-      "date": "2025-09-12",
-      "count": 0,
-      "level": "NONE",
-      "weekday": 5,
-      "color": "#ebedf0"
-    },
-    {
-      "date": "2025-09-13",
-      "count": 0,
-      "level": "NONE",
-      "weekday": 6,
-      "color": "#ebedf0"
-    },
-    {
-      "date": "2025-09-14",
-      "count": 0,
-      "level": "NONE",
-      "weekday": 0,
-      "color": "#ebedf0"
-    },
-    {
-      "date": "2025-09-15",
-      "count": 0,
-      "level": "NONE",
-      "weekday": 1,
-      "color": "#ebedf0"
-    },
-    {
-      "date": "2025-09-16",
-      "count": 2,
-      "level": "FIRST_QUARTILE",
-      "weekday": 2,
-      "color": "#9be9a8"
-    },
-    {
-      "date": "2025-09-17",
-      "count": 1,
-      "level": "FIRST_QUARTILE",
-      "weekday": 3,
-      "color": "#9be9a8"
-    },
-    {
-      "date": "2025-09-18",
-      "count": 2,
-      "level": "FIRST_QUARTILE",
-      "weekday": 4,
-      "color": "#9be9a8"
-    },
-    {
-      "date": "2025-09-19",
-      "count": 0,
-      "level": "NONE",
-      "weekday": 5,
-      "color": "#ebedf0"
-    },
-    {
-      "date": "2025-09-20",
-      "count": 0,
-      "level": "NONE",
-      "weekday": 6,
-      "color": "#ebedf0"
-    },
     {
       "date": "2025-09-21",
       "count": 0,
@@ -947,14 +654,14 @@
     },
     {
       "date": "2025-12-20",
-      "count": 0,
-      "level": "NONE",
+      "count": 1,
+      "level": "FIRST_QUARTILE",
       "weekday": 6,
-      "color": "#ebedf0"
+      "color": "#9be9a8"
     },
     {
       "date": "2025-12-21",
-      "count": 4,
+      "count": 3,
       "level": "FIRST_QUARTILE",
       "weekday": 0,
       "color": "#9be9a8"
@@ -1535,17 +1242,17 @@
     },
     {
       "date": "2026-03-14",
-      "count": 2,
+      "count": 3,
       "level": "FIRST_QUARTILE",
       "weekday": 6,
       "color": "#9be9a8"
     },
     {
       "date": "2026-03-15",
-      "count": 18,
-      "level": "SECOND_QUARTILE",
+      "count": 17,
+      "level": "FIRST_QUARTILE",
       "weekday": 0,
-      "color": "#40c463"
+      "color": "#9be9a8"
     },
     {
       "date": "2026-03-16",
@@ -2606,9 +2313,268 @@
     },
     {
       "date": "2026-08-14",
-      "count": 2,
-      "level": "FIRST_QUARTILE",
+      "count": 26,
+      "level": "SECOND_QUARTILE",
       "weekday": 5,
+      "color": "#40c463"
+    },
+    {
+      "date": "2026-08-15",
+      "count": 0,
+      "level": "NONE",
+      "weekday": 6,
+      "color": "#ebedf0"
+    },
+    {
+      "date": "2026-08-16",
+      "count": 0,
+      "level": "NONE",
+      "weekday": 0,
+      "color": "#ebedf0"
+    },
+    {
+      "date": "2026-08-17",
+      "count": 0,
+      "level": "NONE",
+      "weekday": 1,
+      "color": "#ebedf0"
+    },
+    {
+      "date": "2026-08-18",
+      "count": 0,
+      "level": "NONE",
+      "weekday": 2,
+      "color": "#ebedf0"
+    },
+    {
+      "date": "2026-08-19",
+      "count": 0,
+      "level": "NONE",
+      "weekday": 3,
+      "color": "#ebedf0"
+    },
+    {
+      "date": "2026-08-20",
+      "count": 0,
+      "level": "NONE",
+      "weekday": 4,
+      "color": "#ebedf0"
+    },
+    {
+      "date": "2026-08-21",
+      "count": 0,
+      "level": "NONE",
+      "weekday": 5,
+      "color": "#ebedf0"
+    },
+    {
+      "date": "2026-08-22",
+      "count": 0,
+      "level": "NONE",
+      "weekday": 6,
+      "color": "#ebedf0"
+    },
+    {
+      "date": "2026-08-23",
+      "count": 0,
+      "level": "NONE",
+      "weekday": 0,
+      "color": "#ebedf0"
+    },
+    {
+      "date": "2026-08-24",
+      "count": 0,
+      "level": "NONE",
+      "weekday": 1,
+      "color": "#ebedf0"
+    },
+    {
+      "date": "2026-08-25",
+      "count": 0,
+      "level": "NONE",
+      "weekday": 2,
+      "color": "#ebedf0"
+    },
+    {
+      "date": "2026-08-26",
+      "count": 0,
+      "level": "NONE",
+      "weekday": 3,
+      "color": "#ebedf0"
+    },
+    {
+      "date": "2026-08-27",
+      "count": 0,
+      "level": "NONE",
+      "weekday": 4,
+      "color": "#ebedf0"
+    },
+    {
+      "date": "2026-08-28",
+      "count": 0,
+      "level": "NONE",
+      "weekday": 5,
+      "color": "#ebedf0"
+    },
+    {
+      "date": "2026-08-29",
+      "count": 0,
+      "level": "NONE",
+      "weekday": 6,
+      "color": "#ebedf0"
+    },
+    {
+      "date": "2026-08-30",
+      "count": 0,
+      "level": "NONE",
+      "weekday": 0,
+      "color": "#ebedf0"
+    },
+    {
+      "date": "2026-08-31",
+      "count": 0,
+      "level": "NONE",
+      "weekday": 1,
+      "color": "#ebedf0"
+    },
+    {
+      "date": "2026-09-01",
+      "count": 0,
+      "level": "NONE",
+      "weekday": 2,
+      "color": "#ebedf0"
+    },
+    {
+      "date": "2026-09-02",
+      "count": 0,
+      "level": "NONE",
+      "weekday": 3,
+      "color": "#ebedf0"
+    },
+    {
+      "date": "2026-09-03",
+      "count": 0,
+      "level": "NONE",
+      "weekday": 4,
+      "color": "#ebedf0"
+    },
+    {
+      "date": "2026-09-04",
+      "count": 0,
+      "level": "NONE",
+      "weekday": 5,
+      "color": "#ebedf0"
+    },
+    {
+      "date": "2026-09-05",
+      "count": 0,
+      "level": "NONE",
+      "weekday": 6,
+      "color": "#ebedf0"
+    },
+    {
+      "date": "2026-09-06",
+      "count": 0,
+      "level": "NONE",
+      "weekday": 0,
+      "color": "#ebedf0"
+    },
+    {
+      "date": "2026-09-07",
+      "count": 0,
+      "level": "NONE",
+      "weekday": 1,
+      "color": "#ebedf0"
+    },
+    {
+      "date": "2026-09-08",
+      "count": 0,
+      "level": "NONE",
+      "weekday": 2,
+      "color": "#ebedf0"
+    },
+    {
+      "date": "2026-09-09",
+      "count": 0,
+      "level": "NONE",
+      "weekday": 3,
+      "color": "#ebedf0"
+    },
+    {
+      "date": "2026-09-10",
+      "count": 0,
+      "level": "NONE",
+      "weekday": 4,
+      "color": "#ebedf0"
+    },
+    {
+      "date": "2026-09-11",
+      "count": 0,
+      "level": "NONE",
+      "weekday": 5,
+      "color": "#ebedf0"
+    },
+    {
+      "date": "2026-09-12",
+      "count": 0,
+      "level": "NONE",
+      "weekday": 6,
+      "color": "#ebedf0"
+    },
+    {
+      "date": "2026-09-13",
+      "count": 0,
+      "level": "NONE",
+      "weekday": 0,
+      "color": "#ebedf0"
+    },
+    {
+      "date": "2026-09-14",
+      "count": 4,
+      "level": "FIRST_QUARTILE",
+      "weekday": 1,
+      "color": "#9be9a8"
+    },
+    {
+      "date": "2026-09-15",
+      "count": 0,
+      "level": "NONE",
+      "weekday": 2,
+      "color": "#ebedf0"
+    },
+    {
+      "date": "2026-09-16",
+      "count": 0,
+      "level": "NONE",
+      "weekday": 3,
+      "color": "#ebedf0"
+    },
+    {
+      "date": "2026-09-17",
+      "count": 0,
+      "level": "NONE",
+      "weekday": 4,
+      "color": "#ebedf0"
+    },
+    {
+      "date": "2026-09-18",
+      "count": 0,
+      "level": "NONE",
+      "weekday": 5,
+      "color": "#ebedf0"
+    },
+    {
+      "date": "2026-09-19",
+      "count": 0,
+      "level": "NONE",
+      "weekday": 6,
+      "color": "#ebedf0"
+    },
+    {
+      "date": "2026-09-20",
+      "count": 17,
+      "level": "FIRST_QUARTILE",
+      "weekday": 0,
       "color": "#9be9a8"
     }
   ]
