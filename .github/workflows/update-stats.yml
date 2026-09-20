@@ -22,11 +22,6 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install requests
-
       - name: Fetch contribution data
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -35,7 +30,7 @@ jobs:
 
       - name: Generate contribution SVG
         run: |
-          python scripts/make_contributions.py
+          python scripts/generate_contributions.py
 
       - name: Commit changes
         run: |
