@@ -4,8 +4,9 @@ import html
 from datetime import date, timedelta
 
 
-DATA = Path("../contributions.json")
-OUTPUT = Path("../contributions.svg")
+ROOT = Path(__file__).resolve().parent.parent
+DATA = ROOT / "contributions.json"
+OUTPUT = ROOT / "contributions.svg"
 
 data = json.loads(DATA.read_text(encoding="utf-8"))
 
@@ -26,6 +27,7 @@ TEXT = "#f0f6fc"
 MUTED = "#8b949e"
 LINE = "#c9d1d9"
 FILL = "#21262d"
+RIGHT_X = WIDTH - 55
 
 
 # ---------------------------------------------------------
@@ -161,7 +163,7 @@ for i, value in enumerate(weekly):
         - normalized * graph_height
     )
 
-    points.append((x, y))svg += text
+    points.append((x, y))
 
 
 # ---------------------------------------------------------
@@ -269,8 +271,6 @@ svg += text(
 # ---------------------------------------------------------
 # RIGHT STATS
 # ---------------------------------------------------------
-
-RIGHT_X = WIDTH - 55
 
 svg += text(
     RIGHT_X,
