@@ -4,16 +4,33 @@ import html
 from datetime import date, timedelta
 
 
+# ---------------------------------------------------------
+# PATHS
+# ---------------------------------------------------------
+
 ROOT = Path(__file__).resolve().parent.parent
+
 DATA = ROOT / "contributions.json"
 OUTPUT = ROOT / "contributions.svg"
 
-data = json.loads(DATA.read_text(encoding="utf-8"))
+
+# ---------------------------------------------------------
+# LOAD DATA
+# ---------------------------------------------------------
+
+if not DATA.exists():
+    raise FileNotFoundError(
+        f"Could not find contribution data: {DATA}"
+    )
+
+data = json.loads(
+    DATA.read_text(encoding="utf-8")
+)
 
 stats = data["stats"]
 days = data["days"]
-
 USERNAME = data["username"]
+
 
 # ---------------------------------------------------------
 # SETTINGS
@@ -27,7 +44,12 @@ TEXT = "#f0f6fc"
 MUTED = "#8b949e"
 LINE = "#c9d1d9"
 FILL = "#21262d"
+
+LEFT_X = 55
 RIGHT_X = WIDTH - 55
+
+GRAPH_TOP = 165
+GRAPH_BOTTOM = 325
 
 
 # ---------------------------------------------------------
@@ -45,11 +67,12 @@ def text(
     size=16,
     weight=400,
     color=TEXT,
-    anchor="start"
+    anchor="start",
 ):
     return (
         f'<text x="{x}" y="{y}" '
-        f'font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" '
+        f'font-family="ui-monospace, SFMono-Regular, Menlo, '
+        f'Monaco, Consolas, monospace" '
         f'font-size="{size}px" '
         f'font-weight="{weight}" '
         f'fill="{color}" '
@@ -64,30 +87,33 @@ def text(
 
 daily = []
 
-for d in days:
-    daily.append({
-        "date": date.fromisoformat(d["date"]),
-        "count": int(d["count"])
-    })
+for item in days:
+    daily.append(
+        {
+            "date": date.fromisoformat(item["date"]),
+            "count": int(item["count"]),
+            "weekday": int(item.get("weekday", 0)),
+        }
+    )
 
-daily.sort(key=lambda x: x["date"])
+daily.sort(key=lambda item: item["date"])
 
 
 # ---------------------------------------------------------
-# BEST WEEK
+# BEST 7-DAY PERIOD
 # ---------------------------------------------------------
 
 best_week = 0
 
-for i in range(len(daily)):
+for index, item in enumerate(daily):
 
-    window_start = daily[i]["date"]
-    window_end = window_start + timedelta(days=6)
+    start = item["date"]
+    end = start + timedelta(days=6)
 
     total = sum(
-        d["count"]
-        for d in daily
-        if window_start <= d["date"] <= window_end
+        day["count"]
+        for day in daily
+        if start <= day["date"] <= end
     )
 
     best_week = max(best_week, total)
@@ -97,30 +123,39 @@ for i in range(len(daily)):
 # WEEKLY GRAPH DATA
 # ---------------------------------------------------------
 
-# Group contributions into 7-day windows.
-# This gives us the broad, elegant graph seen in the reference.
-
 weekly = []
 
-i = 0
+current_week = 0
+previous_weekday = None
 
-while i < len(daily):
+for item in daily:
 
-    start = daily[i]["date"]
-    end = start + timedelta(days=6)
+    weekday = item["weekday"]
 
-    total = sum(
-        d["count"]
-        for d in daily
-        if start <= d["date"] <= end
-    )
+    # GitHub:
+    # 0 = Sunday
+    # 1 = Monday
+    # 2 = Tuesday
+    # ...
+    # 6 = Saturday
 
-    weekly.append(total)
+    if (
+        previous_weekday is not None
+        and weekday == 0
+    ):
+        weekly.append(current_week)
+        current_week = 0
 
-    i += 7
+    current_week += item["count"]
+
+    previous_weekday = weekday
 
 
-# Keep approximately the last year.
+if current_week:
+    weekly.append(current_week)
+
+
+# Last ~year of weekly points
 weekly = weekly[-53:]
 
 
@@ -128,34 +163,34 @@ weekly = weekly[-53:]
 # GRAPH GEOMETRY
 # ---------------------------------------------------------
 
-GRAPH_LEFT = 55
-GRAPH_RIGHT = WIDTH - 55
-
-GRAPH_TOP = 165
-GRAPH_BOTTOM = 325
+GRAPH_LEFT = LEFT_X
+GRAPH_RIGHT = RIGHT_X
 
 graph_width = GRAPH_RIGHT - GRAPH_LEFT
 graph_height = GRAPH_BOTTOM - GRAPH_TOP
 
 max_value = max(weekly) if weekly else 1
-
-# Avoid a completely flat graph if everything is tiny.
 max_value = max(max_value, 1)
-
 
 points = []
 
-for i, value in enumerate(weekly):
+for index, value in enumerate(weekly):
 
     if len(weekly) == 1:
+
         x = GRAPH_LEFT
+
     else:
+
         x = (
             GRAPH_LEFT
-            + (i / (len(weekly) - 1)) * graph_width
+            + (
+                index
+                / (len(weekly) - 1)
+            )
+            * graph_width
         )
 
-    # Slightly compress extreme spikes.
     normalized = value / max_value
 
     y = (
@@ -167,7 +202,7 @@ for i, value in enumerate(weekly):
 
 
 # ---------------------------------------------------------
-# BUILD SMOOTH SVG PATH
+# SMOOTH SVG PATH
 # ---------------------------------------------------------
 
 def smooth_path(points):
@@ -176,17 +211,21 @@ def smooth_path(points):
         return ""
 
     if len(points) == 1:
+
         x, y = points[0]
+
         return f"M {x} {y}"
 
-    path = f"M {points[0][0]} {points[0][1]}"
+    path = (
+        f"M {points[0][0]} "
+        f"{points[0][1]}"
+    )
 
-    for i in range(1, len(points)):
+    for index in range(1, len(points)):
 
-        x0, y0 = points[i - 1]
-        x1, y1 = points[i]
+        x0, y0 = points[index - 1]
+        x1, y1 = points[index]
 
-        # Control points create a smooth curve.
         midpoint = (x0 + x1) / 2
 
         path += (
@@ -201,7 +240,9 @@ def smooth_path(points):
 line_path = smooth_path(points)
 
 
-# Filled version of the same graph.
+# ---------------------------------------------------------
+# FILLED AREA
+# ---------------------------------------------------------
 
 if points:
 
@@ -213,11 +254,12 @@ if points:
     )
 
 else:
+
     fill_path = ""
 
 
 # ---------------------------------------------------------
-# SVG START
+# START SVG
 # ---------------------------------------------------------
 
 svg = f'''<svg
@@ -235,36 +277,25 @@ viewBox="0 0 {WIDTH} {HEIGHT}">
 
 
 # ---------------------------------------------------------
-# BIG CONTRIBUTION COUNT
+# MAIN CONTRIBUTION COUNT
 # ---------------------------------------------------------
 
 svg += text(
-    55,
-    385,
-    "generated from GitHub contribution data",
-    11,
-    400,
-    MUTED
+    LEFT_X,
+    48,
+    f"{stats['total_contributions']:,}",
+    30,
+    700,
+    TEXT,
 )
 
 svg += text(
-    RIGHT_X,
-    355,
-    "2026",
+    LEFT_X,
+    72,
+    "contributions in the last year",
     12,
     400,
     MUTED,
-    "end"
-)
-
-svg += text(
-    RIGHT_X,
-    385,
-    USERNAME,
-    12,
-    500,
-    MUTED,
-    "end"
 )
 
 
@@ -279,7 +310,7 @@ svg += text(
     22,
     700,
     TEXT,
-    "end"
+    "end",
 )
 
 svg += text(
@@ -289,7 +320,7 @@ svg += text(
     12,
     400,
     MUTED,
-    "end"
+    "end",
 )
 
 svg += text(
@@ -299,7 +330,7 @@ svg += text(
     22,
     700,
     TEXT,
-    "end"
+    "end",
 )
 
 svg += text(
@@ -309,7 +340,7 @@ svg += text(
     12,
     400,
     MUTED,
-    "end"
+    "end",
 )
 
 
@@ -319,7 +350,7 @@ svg += text(
 
 if line_path:
 
-    # Area beneath graph
+    # Filled area
     svg += f'''
 <path
     d="{fill_path}"
@@ -340,7 +371,7 @@ if line_path:
 />
 '''
 
-    # Endpoint dot
+    # Current endpoint
     last_x, last_y = points[-1]
 
     svg += f'''
@@ -354,36 +385,38 @@ if line_path:
 
 
 # ---------------------------------------------------------
-# FOOTER
+# SINGLE FOOTER
 # ---------------------------------------------------------
 
+current_year = date.today().year
+
 svg += text(
-    55,
-    345,
+    LEFT_X,
+    385,
     "generated from GitHub contribution data",
     11,
     400,
-    MUTED
+    MUTED,
 )
 
 svg += text(
     RIGHT_X,
-    315,
-    "2026",
+    355,
+    str(current_year),
     12,
     400,
     MUTED,
-    "end"
+    "end",
 )
 
 svg += text(
     RIGHT_X,
-    345,
+    385,
     USERNAME,
     12,
     500,
     MUTED,
-    "end"
+    "end",
 )
 
 
@@ -395,7 +428,7 @@ svg += "</svg>"
 
 
 # ---------------------------------------------------------
-# WRITE
+# WRITE FILE
 # ---------------------------------------------------------
 
 OUTPUT.write_text(
@@ -403,8 +436,18 @@ OUTPUT.write_text(
     encoding="utf-8"
 )
 
+
+# ---------------------------------------------------------
+# LOG
+# ---------------------------------------------------------
+
 print()
-print("DONE!")
-print(f"Created: {OUTPUT}")
-print(f"Size: {WIDTH} x {HEIGHT}")
-print(f"Best week: {best_week}")
+print("========================================")
+print(" Contribution SVG generated")
+print("========================================")
+print(f"Created   : {OUTPUT}")
+print(f"Total     : {stats['total_contributions']:,}")
+print(f"Active    : {stats['active_days']:,}")
+print(f"Best week : {best_week:,}")
+print(f"Year      : {current_year}")
+print()
