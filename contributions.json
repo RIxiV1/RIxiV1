@@ -23,13 +23,6 @@
   ],
   "days": [
     {
-      "date": "2025-09-23",
-      "count": 0,
-      "level": "NONE",
-      "weekday": 2,
-      "color": "#ebedf0"
-    },
-    {
       "date": "2025-09-24",
       "count": 0,
       "level": "NONE",
@@ -2582,6 +2575,13 @@
       "count": 0,
       "level": "NONE",
       "weekday": 3,
+      "color": "#ebedf0"
+    },
+    {
+      "date": "2026-09-24",
+      "count": 0,
+      "level": "NONE",
+      "weekday": 4,
       "color": "#ebedf0"
     }
   ]
