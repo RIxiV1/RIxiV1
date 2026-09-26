@@ -23,13 +23,6 @@
   ],
   "days": [
     {
-      "date": "2025-09-25",
-      "count": 0,
-      "level": "NONE",
-      "weekday": 4,
-      "color": "#ebedf0"
-    },
-    {
       "date": "2025-09-26",
       "count": 3,
       "level": "FIRST_QUARTILE",
@@ -2582,6 +2575,13 @@
       "count": 0,
       "level": "NONE",
       "weekday": 5,
+      "color": "#ebedf0"
+    },
+    {
+      "date": "2026-09-26",
+      "count": 0,
+      "level": "NONE",
+      "weekday": 6,
       "color": "#ebedf0"
     }
   ]
