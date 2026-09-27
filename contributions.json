@@ -1,11 +1,11 @@
 {
   "username": "RIxiV1",
   "stats": {
-    "total_contributions": 2179,
-    "active_days": 120,
+    "total_contributions": 2176,
+    "active_days": 119,
     "current_streak": 0,
     "longest_streak": 18,
-    "total_commits": 2053,
+    "total_commits": 2050,
     "total_issues": 0,
     "total_pull_requests": 105,
     "total_reviews": 4,
@@ -22,20 +22,6 @@
     "#216e39"
   ],
   "days": [
-    {
-      "date": "2025-09-26",
-      "count": 3,
-      "level": "FIRST_QUARTILE",
-      "weekday": 5,
-      "color": "#9be9a8"
-    },
-    {
-      "date": "2025-09-27",
-      "count": 0,
-      "level": "NONE",
-      "weekday": 6,
-      "color": "#ebedf0"
-    },
     {
       "date": "2025-09-28",
       "count": 0,
@@ -2582,6 +2568,13 @@
       "count": 0,
       "level": "NONE",
       "weekday": 6,
+      "color": "#ebedf0"
+    },
+    {
+      "date": "2026-09-27",
+      "count": 0,
+      "level": "NONE",
+      "weekday": 0,
       "color": "#ebedf0"
     }
   ]
