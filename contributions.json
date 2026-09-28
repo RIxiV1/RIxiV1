@@ -2576,6 +2576,13 @@
       "level": "NONE",
       "weekday": 0,
       "color": "#ebedf0"
+    },
+    {
+      "date": "2026-09-28",
+      "count": 0,
+      "level": "NONE",
+      "weekday": 1,
+      "color": "#ebedf0"
     }
   ]
 }
