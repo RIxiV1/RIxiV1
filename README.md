@@ -29,9 +29,8 @@ I like building useful software and figuring out how things work.
 </blockquote>
 
 <p>
-I build full-stack applications, AI-powered tools, and products that solve
-actual problems. Right now I'm especially interested in developer tools,
-AI/ML, and product engineering.
+I build things, break things, and try to understand how they work.
+Currently messing around with AI, software, Linux, and whatever else catches my attention.
 </p>
 
 <p>
